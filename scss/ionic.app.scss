@@ -1,0 +1,414 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+$vert: #c7f464;
+$rose: #ff6b6b;
+$marron: #675959;
+$blanc: #fff;
+$grisclair: #909090;
+
+$ombreTxt: 0px 4px 7px rgba(0, 0, 0, 0.5);
+
+//POLICE
+@font-face {
+  font-family: 'champagne__limousinesBdIt';
+  src: url('../../fonts/champagne__limousines_bold_italic-webfont.woff2') format('woff2'),
+  url('../../fonts/champagne__limousines_bold_italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'champagne__limousinesbold';
+  src: url('../fonts/champagne__limousines_bold-webfont.woff2') format('woff2'),
+  url('../fonts/champagne__limousines_bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'champagne__limousinesitalic';
+  src: url('../fonts/champagne__limousines_italic-webfont.woff2') format('woff2'),
+  url('../fonts/champagne__limousines_italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'champagne__limousinesregular';
+  src: url('../fonts/champagne__limousines-webfont.woff2') format('woff2'),
+  url('fonts/champagne__limousines-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//CORPS
+
+h1, h2, h3, h4, p, a {
+  font-family: 'champagne__limousinesregular';
+}
+
+a {
+  text-decoration: none;
+}
+
+//PAGE HOMEPAGE
+
+.page_home {
+  height:100%;
+}
+
+.page_home .col {
+  padding: 0 !important;
+}
+
+.page_home {
+  padding: 0 !important;
+}
+
+.page_home h1 {
+  position: absolute;
+  margin-top: 12%;
+  margin-left: -20%;
+  color: $blanc;
+  font-size: 5em;
+  text-shadow: $ombreTxt;
+  font-family: "champagne__limousinesregular";
+}
+
+.page_home h2 {
+  text-align: center;
+}
+
+.page_home h3 {
+  position: absolute;
+  margin-top: 30%;
+  margin-left: -25%;
+  color: $blanc;
+}
+
+.img_sucre {
+  background-image: url('../img/img_sucre.jpg');
+  background-size: cover;
+  opacity: 0.85;
+  background-position: center;
+
+}
+
+.img_sale {
+  background-image: url('../img/img_sale.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.etiquette_sucre {
+  margin-top: 350px;
+  left: 0;
+  height: 70px;
+  width: 70%;
+  background-color: $rose;
+}
+
+.etiquette_sucre h2 {
+  color: $blanc;
+  padding-top: 12%;
+}
+
+.etiquette_sale {
+  margin-top: 350px;
+  margin-left: 30%;
+  width: 70%;
+  height: 70px;
+  background-color: $vert;
+}
+
+.etiquette_sale h2 {
+  color: $marron;
+  padding-top: 12%;
+}
+
+
+/*---------------------------------------------------------
+
+             PAGE SUCRE
+
+---------------------------------------------------------*/
+.page-sucre{
+  height: 100vh;
+}
+
+/* IMG de fond */
+
+.bg-empty{
+  height: 47%;
+  background-image: url('../img/bg-sucre.jpg');
+  background-size: cover;
+}
+.bg-empty h1{
+  color : white;
+  background-color:#ff6b6b ;
+  width: 40%;
+  height:15%;
+  float: right;
+  margin-top: 20%;
+
+}
+
+/*categories de recettes*/
+
+.categories{
+  height: 45%;
+}
+
+
+.row-top, .row-center, .row-bottom{
+  padding: 0 !important;
+
+}
+
+
+.col-50{
+  padding: 0 !important;
+  height: 100%;
+  border-right: 1px solid #cfcfcf;
+}
+
+
+.bg-categ{
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25%;
+  height: 100%;
+
+}
+
+.ligne{
+  height: 35%;
+  border-bottom: 1px solid #cfcfcf;
+}
+/*---------------------------------------------------------
+
+                TEXT
+
+---------------------------------------------------------*/
+.bg-categ h3{
+  color: $grisclair;
+  padding-top:42%;
+  font-size: 1.2em;
+  text-shadow: 0px 3px 2.85px rgba(0, 0, 0, 0.004);
+}
+
+
+
+// PAGE SEL
+
+.page-sale{
+  height: 100vh;
+}
+
+.bg-empty-sel {
+  height: 47%;
+  background-image: url('../img/bg-sel.jpg');
+  background-position: 30% 0;
+  background-size: cover;
+}
+
+.bg-empty-sel h1 {
+  color : #675959;
+  background-color: #c7f464;
+  width: 40%;
+  height:15%;
+  float: right;
+  margin-top: 20%;
+}
+
+.bg-categ-sel h2{
+  color: $grisclair;
+  padding-top:42%;
+  font-size: 1.2em;
+  text-shadow: 0px 3px 2.85px rgba(0, 0, 0, 0.004);
+}
+
+.bg-categ-sel {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25%;
+  height: 100%;
+}
+
+
+/*---------------------------------------------------------
+ IMAGES CATEGORIES
+ ---------------------------------------------------------*/
+
+.gaufres-sel{
+  background-image: url('../img/icon/waffle-sel.png');
+
+}
+.muffins-sel{
+  background-image: url('../img/icon/muffin-sel.png');
+
+}
+.cookies-sel{
+  background-image: url('../img/icon/cookie-sel.png');
+
+}
+.cake-sel{
+  background-image: url('../img/icon/cake-sel.png');
+
+}
+.crepes-sel{
+  background-image: url('../img/icon/crêpe-sel.png');
+
+}
+.paques-sel{
+  background-image: url('');
+
+}
+
+/* FIN IMAGES */
+
+/*---------------------------------------------------------
+ IMAGES CATEGORIES
+ ---------------------------------------------------------*/
+.gaufres{
+  background-image: url('../img/icon/waffle.png');
+
+}
+.muffins{
+  background-image: url('../img/icon/muffin.png');
+
+}
+.cookies{
+  background-image: url('../img/icon/cookie.png');
+
+}
+.cake{
+  background-image: url('../img/icon/cake.png');
+
+}
+.crepes{
+  background-image: url('../img/icon/crêpe.png');
+
+}
+.paques{
+  background-image: url('');
+
+}
+
+/* FIN IMAGES */
+
+
+/*---------------------------------------------------------
+
+
+    PAGE RECETTE GAUFRE
+
+
+---------------------------------------------------------*/
+
+.page-gaufre, .page-ingre{
+  height: 100vh;
+}
+
+.bg-gaufre{
+  background-image: url('../img/gaufre-sucre.jpg');
+  background-size: cover;
+  height: 30%;
+}
+
+.bg-gaufre h1{
+  color: white;
+  padding: 1%;
+  text-shadow: 0px 3px 2.85px rgba(0, 0, 0, 0.004);
+}
+
+.bg-gaufre button{
+  background-color:white;
+  display: flex;
+  align-items: center;
+}
+
+/* ---------------------------------------------------------
+LISTE DES RECETTES
+ ---------------------------------------------------------*/
+
+.item{
+  padding:0;
+}
+
+.item-avatar > img:first-child, .item-avatar .item-image, .item-avatar .item-content > img:first-child,
+.item-avatar .item-content .item-image, .item-avatar-left > img:first-child, .item-avatar-left .item-image,
+.item-avatar-left .item-content > img:first-child, .item-avatar-left .item-content .item-image{
+  left: 3%;
+  bottom : 2%;
+  max-width: 20%;
+  max-height: 60%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+
+
+.ion-ios-heart-outline{
+  font-size: 30px;
+  margin-top: 8%;
+
+}
+
+.item button{
+  position: absolute;
+
+}
+
+.button-clear.button-clear{
+  color: #cfcfcf;
+}
+
+.item a{
+
+  text-decoration: none;
+}
+
+
+/*---------------------------------------------------------
+ POLICES DES LISTES
+ ---------------------------------------------------------*/
+
+.item h2{
+  margin: 0% 5% 0% 26%;
+  font-size: 18px;
+  font-weight: normal;
+  color: #ff6b6b;
+}
+
+.item p{
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 2px;
+  margin-left: 31%;
+}
+
+

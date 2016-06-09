@@ -1,0 +1,43 @@
+<ion-view view-title="Muffin | Sucré"><!--creation d'une vue-->
+    <ion-content scroll="true"><!-- permet de rendre la  vue non scrollable-->
+        <!-- BACKGROUND GAUFRE -->
+
+        <section class="page-gaufre">
+
+            <div class="bg-gaufre">
+                <a class="button icon-left ion-chevron-left button-clear button-ligth ion-ios-arrow-thin-left">
+                </a>
+                <h1 class="text-center"> MUFFIN </h1>
+            </div>
+
+
+            <!--LISTE DES RECETTES -->
+
+            <ion-list>
+                <ion-item>
+                            <span class="item item-sel">
+                        <div class="row">
+                            <div class="col col-75">
+                                <a class="item-avatar"><img src="img/muffin-sucre.jpg">
+                                    <h2 class="text-center">{{recette.titre}}</h2>
+                                    <p class="text-left"> Durée : {{recette.temps}} minutes</p>
+                                    <p class="text-left"> Pour  : {{recette.nbPersonne}} personnes</p>
+                                    <p class="text-left"> Difficulté : {{recette.difficulte}} </p>
+                                </a>
+                            </div>
+                            <div class="col">
+
+                                <!--<button class="button-light button-clear ion-ios-heart-outline pull-right" ng-controller="FavController"></button>-->
+
+                                <button ng-click="addItem()" class="button-light button-clear ion-ios-heart-outline pull-right"></button>
+                            </div>
+                        </div>
+                    </span>
+                </ion-item>
+            </ion-list>
+
+
+
+        </section>
+    </ion-content>
+</ion-view>
