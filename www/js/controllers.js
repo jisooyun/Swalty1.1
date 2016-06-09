@@ -62,7 +62,4 @@ angular.module('starter.controllers', [])
     enableFriends: true
   }
 
-
-
-
 });
