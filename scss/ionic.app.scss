@@ -259,7 +259,7 @@ a {
 
 
 /*---------------------------------------------------------
- IMAGES CATEGORIES
+ IMAGES CATEGORIES SALE
  ---------------------------------------------------------*/
 
 .gaufres-sel{
@@ -290,7 +290,7 @@ a {
 /* FIN IMAGES */
 
 /*---------------------------------------------------------
- IMAGES CATEGORIES
+ IMAGES CATEGORIES SUCRE
  ---------------------------------------------------------*/
 .gaufres{
   background-image: url('../img/icon/waffle.png');
@@ -318,57 +318,89 @@ a {
 }
 
 /* FIN IMAGES */
-
-
-/*---------------------------------------------------------
-
-
-    PAGE RECETTE GAUFRE
-
-
----------------------------------------------------------*/
-
-.page-gaufre, .page-ingre{
+.page, .page-ingre{
   height: 100vh;
 }
 
-.bg-gaufre{
-  background-image: url('../img/gaufre-sucre.jpg');
-  background-size: cover;
-  height: 30%;
-}
-
-.bg-gaufre h1{
+.page h1{
   color: white;
   padding: 1%;
   text-shadow: 0px 3px 2.85px rgba(0, 0, 0, 0.004);
 }
 
-.bg-gaufre button{
-  background-color:white;
-  display: flex;
-  align-items: center;
+.bg-list{
+  background-size: cover;
+  height: 30%;
 }
+
+/*---------------------------------------------------------
+
+
+    PAGE RECETTES GAUFRE SUCRE
+
+
+---------------------------------------------------------*/
+
+
+
+.bg-gaufre-sucre{
+  background-image: url('../img/gaufre-sucre.jpg');
+
+}
+
+/*---------------------------------------------------------
+
+
+    PAGE RECETTES GAUFRE SALE
+
+
+---------------------------------------------------------*/
+
+
+.bg-crepe-sucre{
+  background-image: url('../img/crepe-sucre.jpg');
+
+}
+
+
+
+/*---------------------------------------------------------
+
+
+    PAGE RECETTES GAUFRE SALE
+
+
+---------------------------------------------------------*/
+
+
+.bg-gaufre-sel{
+  background-image: url('../img/gaufre-sel.jpg');
+
+}
+
+
+
+
+
+/*---------------------------------------------------------
+
+
+    PAGE RECETTES CREPE SALE
+
+
+---------------------------------------------------------*/
+
+
+.bg-crepe-sel{
+  background-image: url('../img/crepe-sale.jpg');
+
+}
+
+
 
 /* ---------------------------------------------------------
 LISTE DES RECETTES
  ---------------------------------------------------------*/
-
-.item{
-  padding:0;
-}
-
-.item-avatar > img:first-child, .item-avatar .item-image, .item-avatar .item-content > img:first-child,
-.item-avatar .item-content .item-image, .item-avatar-left > img:first-child, .item-avatar-left .item-image,
-.item-avatar-left .item-content > img:first-child, .item-avatar-left .item-content .item-image{
-  left: 3%;
-  bottom : 2%;
-  max-width: 20%;
-  max-height: 60%;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-}
 
 
 
@@ -376,6 +408,10 @@ LISTE DES RECETTES
   font-size: 30px;
   margin-top: 8%;
 
+}
+
+.item img{
+  border-radius: 50%;
 }
 
 .item button{
@@ -390,6 +426,7 @@ LISTE DES RECETTES
 .item a{
 
   text-decoration: none;
+  border: none !important;
 }
 
 
@@ -397,8 +434,8 @@ LISTE DES RECETTES
  POLICES DES LISTES
  ---------------------------------------------------------*/
 
+
 .item h2{
-  margin: 0% 5% 0% 26%;
   font-size: 18px;
   font-weight: normal;
   color: #ff6b6b;
@@ -407,8 +444,88 @@ LISTE DES RECETTES
 .item p{
   color: #666;
   font-size: 16px;
-  margin-bottom: 2px;
-  margin-left: 31%;
+
 }
 
 
+
+/*---------------------------------------------------------
+
+
+    PAGE INGREDIENTS GAUFRE
+
+
+---------------------------------------------------------*/
+.bg-ingre{
+  background-image: url('../img/bg-gaufre-sucre.jpg');
+  background-size: cover;
+  height: 25%;
+
+}
+/*RESUMER DE LA RECETTE*/
+
+.ingre h2{
+  color : white;
+  font-size: 1.7em;
+  background-color:#ff6b6b ;
+  padding: 1%;
+  width: 70%;
+  float: right;
+  margin-top: 40%;
+
+}
+
+
+.resume{
+
+  height: 10vh;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+.resume button{
+  padding: 0;
+  margin: 0;
+}
+
+.text-resume{
+  padding-top: 13px;
+}
+
+/*INGREDIENTS NECESSAIRE */
+
+.content h3{
+  color: #cfcfcf;
+  margin-top: 5%;
+}
+
+.content{
+  text-align: center;
+}
+
+.content-detail{
+  text-align: center;
+  line-height: 10%;
+}
+
+.content-detail p{
+  padding-top: 8%;
+  word-wrap: break-word;
+  font-size: 1.2em;
+}
+
+.tool{
+  width: 8%;
+  height: 8%;
+  margin-bottom: 8%;
+  margin-right: 8%;
+}
+
+
+.start{
+  border: 0.5px solid #ff6b6b;
+  color: #cfcfcf;
+  font-size: 18px;
+  padding : 2% 20% 2% 20%;
+
+
+}

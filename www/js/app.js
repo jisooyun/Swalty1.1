@@ -77,7 +77,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
       .state('gaufre-sucre', {
           url: '/gaufre-sucre',
-              templateUrl: 'templates/categSucre/gaufre-sucre.html'
+          templateUrl: 'templates/categSucre/gaufre-sucre.html'
+
+      })
+      .state('gsucre-ingredients', {
+          url: '/gsucre-ingredients',
+          templateUrl: 'templates/categSucre/gsucre-ingredients.html',
+
       })
 
       ////// MUFFINS
