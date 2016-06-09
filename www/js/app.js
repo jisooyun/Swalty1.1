@@ -80,9 +80,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           templateUrl: 'templates/categSucre/gaufre-sucre.html'
 
       })
-      .state('gsucre-ingredients', {
-          url: '/gsucre-ingredients',
-          templateUrl: 'templates/categSucre/gsucre-ingredients.html',
+      .state('sucre-detail', {
+          url: '/sucre-detail',
+          templateUrl: 'templates/sucre-detail.html',
 
       })
 
