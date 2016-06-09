@@ -1,5 +1,5 @@
-<ion-view view-title="Ingredients" ng-controller="RecetteController"><!--creation d'une vue-->
-    <ion-content scroll="false"><!-- permet de rendre la  vue non scrollable-->
+<ion-view view-title="Ingredients" ng-controller="SingleController"><!--creation d'une vue-->
+    <ion-content scroll="true"><!-- permet de rendre la  vue non scrollable-->
         <!-- BACKGROUND GAUFRE -->
 
         <section class="page-ingre">
@@ -7,7 +7,7 @@
             <div class="bg-ingre ingre">
                 <a class="button icon-left ion-chevron-left button-clear button-ligth ion-ios-arrow-thin-left" ui-sref="gaufre-sucre">
                 </a>
-                <h2 class="text-center"></h2>
+                <h2 class="text-center">{{single.titre}}</h2>
             </div>
 
             <div class="row resume">
@@ -16,10 +16,10 @@
 
                 </div>
                 <div class="col col-20">
-                    <p class="text-resume">4 pers.</p>
+                    <p class="text-resume">{{single.nbPersonne}} personnes</p>
                 </div>
                 <div class="col col-40">
-                    <p class="text-resume">10 min de préparation</p>
+                    <p class="text-resume">{{single.temps}} min de préparation</p>
                 </div>
             </div>
 
@@ -28,19 +28,13 @@
                 <div class="row content">
                     <div class="col-10"></div>
                     <div class="col-80">
+                        <ion-item ng-repeat="ingredient in ingredients track by $index">
                         <div class="row content-detail">
                             <img src="../img/tool.png" class="img-responsive tool">
-                            <p>Sucre</p>
+                            <p>{{ingredient}}</p>
                         </div>
-                        <div class="row content-detail">
-                            <img src="../img/tool.png" class="img-responsive tool"> <p>4 fraises</p>
-                        </div>
-                        <div class="row content-detail">
-                            <img src="../img/tool.png" class="img-responsive tool"> <p>3 oeufs</p>
-                        </div>
-                        <div class="row content-detail">
-                            <img src="../img/tool.png" class="img-responsive tool"> <p>670 grammes de farine blanche</p>
-                        </div>
+                        </ion-item>
+                        
                     </div>
                     <div class="col-10"></div>
 

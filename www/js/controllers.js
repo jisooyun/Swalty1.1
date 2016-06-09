@@ -11,8 +11,20 @@ angular.module('starter.controllers', [])
 })
 
 //AFFICHER LES RECETTES
-.controller('RecetteController', function($scope, Recettes){
+.controller('RecetteController', function($scope, Recettes,$state, myService){
    $scope.recettes = Recettes;
+
+   $scope.single = function(){
+      single = this.recette;
+      myService.set(single);
+  } 
+})
+
+//AFFICHER LES RECETTES SINGLE
+.controller('SingleController', function($scope, Recettes, myService){
+
+  $scope.single = myService.get();
+  $scope.ingredients = single.ingredient;
 })
 
 //DETAILS DES RECETTES

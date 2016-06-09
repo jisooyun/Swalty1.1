@@ -16,12 +16,14 @@
 
                     <ion-list ng-controller="RecetteController">
                         <ion-item ng-repeat="recette in recettes">
-                            <a class="item item-thumbnail-left" ui-sref="sucre-detail">
+                            <a class="item item-thumbnail-left" ui-sref="sucre-detail" ng-click="single(single)">
+
                                 <img src="img/gaufre-sucre.jpg">
                                 <h2>{{recette.titre}}</h2>
                                 <p>Durée : {{recette.temps}} minutes</p>
                                 <p> Pour  : {{recette.nbPersonne}} personnes</p>
                                 <p>Difficulté : {{recette.difficulte}}</p>
+
                             </a>
                         </ion-item>
                     </ion-list>
