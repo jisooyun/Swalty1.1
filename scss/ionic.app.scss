@@ -347,7 +347,46 @@ a {
   background-image: url('../img/gaufre-sucre.jpg');
 
 }
+/*---------------------------------------------------------
 
+
+    PAGE RECETTES COOKIE SUCRE
+
+
+---------------------------------------------------------*/
+
+
+.bg-cookie-sucre{
+  background-image: url('../img/categ-cookies.jpg');
+
+}
+/*---------------------------------------------------------
+
+
+    PAGE RECETTES MUFFIN SUCRE
+
+
+---------------------------------------------------------*/
+
+
+.bg-muffin-sucre{
+  background-image: url('../img/categ-muffin.jpg');
+
+}
+
+/*---------------------------------------------------------
+
+
+    PAGE RECETTES CAKE SUCRE
+
+
+---------------------------------------------------------*/
+
+
+.bg-cake-sucre{
+  background-image: url('../img/categ-cake.jpg');
+
+}
 /*---------------------------------------------------------
 
 
@@ -422,7 +461,11 @@ LISTE DES RECETTES
 .button-clear.button-clear{
   color: #cfcfcf;
 }
-
+.content{
+    .item {
+      border: none !important;
+  }
+}
 .item a{
 
   text-decoration: none;

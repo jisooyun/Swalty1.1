@@ -2,10 +2,11 @@
     <ion-content scroll="true"><!-- permet de rendre la  vue non scrollable-->
         <!-- BACKGROUND GAUFRE -->
 
-        <section class="page-gaufre">
+        <section class="page">
 
-            <div class="bg-gaufre">
-                <a class="button icon-left ion-chevron-left button-clear button-ligth ion-ios-arrow-thin-left">
+            <div class="bg-list bg-cake-sucre">
+                <a class="button icon-left ion-chevron-left button-clear button-ligth ion-ios-arrow-thin-left"
+                ui-sref="tab.sucre">
                 </a>
                 <h1 class="text-center"> CAKE </h1>
             </div>
@@ -13,28 +14,23 @@
 
             <!--LISTE DES RECETTES -->
 
-            <ion-list>
-                <ion-item>
-                            <span class="item item-sel">
-                        <div class="row">
-                            <div class="col col-75">
-                                <a class="item-avatar"><img src="img/gaufre-sucre.jpg">
-                                    <h2 class="text-center">{{recette.titre}}</h2>
-                                    <p class="text-left"> Durée : {{recette.temps}} minutes</p>
-                                    <p class="text-left"> Pour  : {{recette.nbPersonne}} personnes</p>
-                                    <p class="text-left"> Difficulté : {{recette.difficulte}} </p>
-                                </a>
-                            </div>
-                            <div class="col">
+            <!--LISTE DES RECETTES -->
 
-                                <!--<button class="button-light button-clear ion-ios-heart-outline pull-right" ng-controller="FavController"></button>-->
 
-                                <button ng-click="addItem()" class="button-light button-clear ion-ios-heart-outline pull-right"></button>
-                            </div>
-                        </div>
-                    </span>
+            <ion-list ng-controller="RecetteController">
+                <ion-item ng-repeat="recette in recettes">
+                    <a class="item item-thumbnail-left" ui-sref="sucre-detail" ng-click="single(single)">
+
+                        <img src="img/gaufre-sucre.jpg">
+                        <h2>{{recette.titre}}</h2>
+                        <p>Durée : {{recette.temps}} minutes</p>
+                        <p> Pour  : {{recette.nbPersonne}} personnes</p>
+                        <p>Difficulté : {{recette.difficulte}}</p>
+
+                    </a>
                 </ion-item>
             </ion-list>
+
 
 
 
