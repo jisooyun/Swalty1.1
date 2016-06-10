@@ -39,31 +39,23 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
   // Each tab has its own nav history stack:
 
-  .state('tab.homepage', {
+  .state('homepage', {
     url: '/homepage',
-    views: {
-      'tab-homepage': {
-        templateUrl: 'templates/tab-homepage.html'
-      }
-    }
+    templateUrl: 'templates/homepage.html'
+
+
   })
 
       //PAGE SUCRE & SALE
-      .state('tab.sucre', {
+      .state('sucre', {
         url: '/sucre',
-        views: {
-          'tab-sucre': {
-            templateUrl: 'templates/tab-sucre.html'
-          }
-        }
+        templateUrl: 'templates/sucre.html'
+
       })
-      .state('tab.sel', {
+      .state('sel', {
         url: '/sel',
-        views: {
-          'tab-sel': {
-              templateUrl: 'templates/tab-sel.html'
-          }
-        }
+        templateUrl: 'templates/sel.html'
+
       })
 
       //TEMPLATES CATEG
@@ -188,6 +180,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/homepage');
+  $urlRouterProvider.otherwise('/homepage');
 
 });

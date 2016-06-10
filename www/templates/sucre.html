@@ -5,7 +5,7 @@
             <!-- DIV SUCRE -->
 
             <div class="bg-empty">
-                <a class="button icon-left ion-chevron-left button-clear button-ligth ion-ios-arrow-thin-left" ui-sref="tab.homepage">
+                <a class="button icon-left ion-chevron-left button-clear button-ligth ion-ios-arrow-thin-left" ui-sref="homepage">
                 </a>
                 <h1 class="text-center">sucré</h1>
             </div>
@@ -64,9 +64,33 @@
                 </div>
             </div>
 
-
-
         </section>
+        <ion-tabs class="tabs-icon-top tabs-color-active-positive" ng-controller="TabsCtrl">
+
+            <!-- Dashboard Tab -->
+            <ion-tab title="Home" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/homepage">
+                <ion-nav-view name="homepage"></ion-nav-view>
+            </ion-tab>
+
+
+            <!-- Sel Tab -->
+            <ion-tab title="Sel" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/sel">
+                <ion-nav-view name="sel"></ion-nav-view>
+            </ion-tab>
+
+            <!--&lt;!&ndash; Chats Tab &ndash;&gt;-->
+            <!--<ion-tab title="Chats" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/chats">-->
+            <!--<ion-nav-view name="tab-chats"></ion-nav-view>-->
+            <!--</ion-tab>-->
+
+            <!-- Account Tab -->
+            <ion-tab title="Account" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
+                <ion-nav-view name="tab-account"></ion-nav-view>
+            </ion-tab>
+
+
+        </ion-tabs>
+
 
     </ion-content>
 </ion-view>
