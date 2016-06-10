@@ -5,7 +5,15 @@ angular.module('starter.controllers', [])
 
 })
 
+.controller("TabsCtrl", function($scope){
+    $scope.tabState = {
+        homepage : {
+            hidden : true
+        }
+    };
+})
 
+//RECETTES
 .factory("Recettes", function($firebaseArray) {
     var itemsRef = new Firebase("https://swaltyapp.firebaseio.com/recettes");
     return $firebaseArray(itemsRef);

@@ -43,8 +43,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     url: '/homepage',
     views: {
       'tab-homepage': {
-        templateUrl: 'templates/tab-homepage.html',
-        controller: 'DashCtrl'
+        templateUrl: 'templates/tab-homepage.html'
       }
     }
   })
@@ -72,7 +71,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       ////// GAUFRES
       .state('gaufre-sel', {
           url: '/gaufre-sel',
-              templateUrl: 'templates/categSel/gaufre-sel.html'
+          templateUrl: 'templates/categSel/gaufre-sel.html'
+
       })
 
       .state('gaufre-sucre', {
@@ -135,12 +135,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
       .state('sucre-detail', {
           url: '/sucre-detail',
-          templateUrl: 'templates/sucre-detail.html',
+          templateUrl: 'templates/sucre-detail.html'
       })
 
       .state('sel-detail', {
           url: '/sel-detail',
-          templateUrl: 'templates/sel-detail.html',
+          templateUrl: 'templates/sel-detail.html'
       })
 
 

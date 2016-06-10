@@ -10068,12 +10068,22 @@ a {
 /*---------------------------------------------------------
 
 
+    PAGE RECETTES MUFFIN SEL
+
+
+---------------------------------------------------------*/
+.bg-muffin-sel {
+  background-image: url("../img/bg-muffin-sel.jpg"); }
+
+/*---------------------------------------------------------
+
+
     PAGE RECETTES MUFFIN SUCRE
 
 
 ---------------------------------------------------------*/
 .bg-muffin-sucre {
-  background-image: url("../img/categ-muffin.jpg"); }
+  background-image: url("../img/bg-muffin-sucre.jpg"); }
 
 /*---------------------------------------------------------
 
