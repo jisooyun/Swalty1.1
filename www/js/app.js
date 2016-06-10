@@ -143,6 +143,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           templateUrl: 'templates/sel-detail.html'
       })
 
+      ////// PAGES ETAPES
+
+      .state('sucre-etape', {
+          url: '/sucre-etape',
+          templateUrl: 'templates/sucre-etape.html'
+      })
+
+      .state('sel-etape', {
+          url: '/sel-etape',
+          templateUrl: 'templates/sel-etape.html'
+      })
+
+
 
 
       .state('tab.chats', {

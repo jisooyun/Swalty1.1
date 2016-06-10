@@ -10244,3 +10244,17 @@ LISTE DES RECETTES SEL
 
 .page-ingre-sel .start {
   border: 0.5px solid #c7f464; }
+
+/* PAGE ETAPES */
+.content-etape {
+  text-align: center;
+  margin-bottom: 15px; }
+
+.content-etape p {
+  text-align: justify;
+  padding-top: 0 !important;
+  white-space: normal !important;
+  line-height: 90% !important; }
+
+.page-etape .start {
+  margin-left: 0 !important; }

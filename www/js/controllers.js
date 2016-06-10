@@ -34,6 +34,7 @@ angular.module('starter.controllers', [])
 
   $scope.single = myService.get();
   $scope.ingredients = single.ingredient;
+  $scope.etapes = single.etape;
 
     $scope.backView = function(){
         $ionicViewService.getBackView().go();
