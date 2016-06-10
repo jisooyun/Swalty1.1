@@ -9,3 +9,5 @@ plugins/
 **/.idea/workspace.xml
 .idea/workspace.xml
 .platforms
+
+.io-config.json

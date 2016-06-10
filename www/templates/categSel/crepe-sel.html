@@ -1,4 +1,4 @@
-<ion-view view-title="Crêpe | Salé"><!--creation d'une vue-->
+<ion-view view-title="Crepe | Salé"><!--creation d'une vue-->
     <ion-content scroll="true"><!-- permet de rendre la  vue non scrollable-->
         <!-- BACKGROUND GAUFRE -->
 
@@ -16,7 +16,7 @@
 
             <ion-list ng-controller="RecetteController">
                 <ion-item ng-repeat="recette in recettes">
-                    <a class="item item-thumbnail-left" href="#">
+                    <a class="item item-thumbnail-left item-sel" ui-sref="sel-detail" ng-click="single(single)">
                         <img src="img/gaufre-sucre.jpg">
                         <h2>{{recette.titre}}</h2>
                         <p>Durée : {{recette.temps}} minutes</p>

@@ -10116,7 +10116,7 @@ a {
   background-image: url("../img/crepe-sale.jpg"); }
 
 /* ---------------------------------------------------------
-LISTE DES RECETTES
+LISTE DES RECETTES SUCRE
  ---------------------------------------------------------*/
 .ion-ios-heart-outline {
   font-size: 30px;
@@ -10137,6 +10137,12 @@ LISTE DES RECETTES
 .item a {
   text-decoration: none;
   border: none !important; }
+
+/* ---------------------------------------------------------
+LISTE DES RECETTES SEL
+ ---------------------------------------------------------*/
+.item-sel h2 {
+  color: #c7f464 !important; }
 
 /*---------------------------------------------------------
  POLICES DES LISTES
@@ -10163,14 +10169,21 @@ LISTE DES RECETTES
   height: 25%; }
 
 /*RESUMER DE LA RECETTE*/
+.page-ingre .item {
+  padding-bottom: 0 !important; }
+
 .ingre h2 {
-  color: white;
+  color: #fff;
   font-size: 1.7em;
   background-color: #ff6b6b;
   padding: 1%;
   width: 70%;
   float: right;
   margin-top: 40%; }
+
+.ingre-sel h2 {
+  background-color: #c7f464 !important;
+  color: #675959; }
 
 .resume {
   height: 10vh;
@@ -10185,11 +10198,15 @@ LISTE DES RECETTES
 
 /*INGREDIENTS NECESSAIRE */
 .content h3 {
-  color: #cfcfcf;
-  margin-top: 5%; }
+  color: #909090;
+  margin-top: 5%;
+  font-size: 1.5em; }
 
 .content {
-  text-align: center; }
+  text-align: center;
+  max-height: 300px !important;
+  overflow: auto;
+  margin-bottom: 15px; }
 
 .content-detail {
   text-align: center;
@@ -10201,13 +10218,19 @@ LISTE DES RECETTES
   font-size: 1.2em; }
 
 .tool {
-  width: 8%;
-  height: 8%;
+  width: 30px;
+  height: 30px;
   margin-bottom: 8%;
   margin-right: 8%; }
 
 .start {
+  text-align: center;
   border: 0.5px solid #ff6b6b;
-  color: #cfcfcf;
+  color: #909090;
   font-size: 18px;
-  padding: 2% 20% 2% 20%; }
+  padding: 2% 20% 2% 20%;
+  margin-left: 18%;
+  border-radius: 10px; }
+
+.page-ingre-sel .start {
+  border: 0.5px solid #c7f464; }

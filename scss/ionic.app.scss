@@ -438,10 +438,8 @@ a {
 
 
 /* ---------------------------------------------------------
-LISTE DES RECETTES
+LISTE DES RECETTES SUCRE
  ---------------------------------------------------------*/
-
-
 
 .ion-ios-heart-outline{
   font-size: 30px;
@@ -467,11 +465,17 @@ LISTE DES RECETTES
   }
 }
 .item a{
-
   text-decoration: none;
   border: none !important;
 }
 
+/* ---------------------------------------------------------
+LISTE DES RECETTES SEL
+ ---------------------------------------------------------*/
+
+.item-sel h2 {
+  color: $vert !important;
+}
 
 /*---------------------------------------------------------
  POLICES DES LISTES
@@ -490,8 +494,6 @@ LISTE DES RECETTES
 
 }
 
-
-
 /*---------------------------------------------------------
 
 
@@ -507,20 +509,26 @@ LISTE DES RECETTES
 }
 /*RESUMER DE LA RECETTE*/
 
+.page-ingre .item {
+  padding-bottom: 0 !important;
+}
+
 .ingre h2{
-  color : white;
+  color : $blanc;
   font-size: 1.7em;
-  background-color:#ff6b6b ;
+  background-color:$rose ;
   padding: 1%;
   width: 70%;
   float: right;
   margin-top: 40%;
-
 }
 
+.ingre-sel h2 {
+  background-color: $vert !important;
+  color: $marron;
+}
 
 .resume{
-
   height: 10vh;
   border-bottom: 1px solid #cfcfcf;
 }
@@ -537,12 +545,16 @@ LISTE DES RECETTES
 /*INGREDIENTS NECESSAIRE */
 
 .content h3{
-  color: #cfcfcf;
+  color: $grisclair;
   margin-top: 5%;
+  font-size: 1.5em;
 }
 
 .content{
   text-align: center;
+  max-height: 300px !important;
+  overflow: auto;
+  margin-bottom: 15px;
 }
 
 .content-detail{
@@ -557,18 +569,22 @@ LISTE DES RECETTES
 }
 
 .tool{
-  width: 8%;
-  height: 8%;
+  width: 30px;
+  height: 30px;
   margin-bottom: 8%;
   margin-right: 8%;
 }
 
-
 .start{
-  border: 0.5px solid #ff6b6b;
-  color: #cfcfcf;
+  text-align: center;
+  border: 0.5px solid $rose;
+  color: $grisclair;
   font-size: 18px;
   padding : 2% 20% 2% 20%;
+  margin-left: 18%;
+  border-radius: 10px;
+}
 
-
+.page-ingre-sel .start {
+  border: 0.5px solid $vert;
 }

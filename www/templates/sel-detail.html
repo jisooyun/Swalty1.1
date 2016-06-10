@@ -1,11 +1,11 @@
 <ion-view view-title="Ingredients" ng-controller="SingleController"><!--creation d'une vue-->
-    <ion-content scroll="false"><!-- permet de rendre la  vue non scrollable-->
+    <ion-content scroll="true"><!-- permet de rendre la  vue non scrollable-->
         <!-- BACKGROUND GAUFRE -->
 
-        <section class="page-ingre">
+        <section class="page-ingre page-ingre-sel">
 
-            <div class="bg-ingre ingre">
-                <a class="button icon-left ion-chevron-left button-clear button-ligth ion-ios-arrow-thin-left" ng-click="backView()">
+            <div class="bg-ingre ingre ingre-sel">
+                <a ng-click="backView()" class="button icon-left ion-chevron-left button-clear button-ligth ion-ios-arrow-thin-left">
                 </a>
                 <h2 class="text-center">{{single.titre}}</h2>
             </div>
@@ -23,24 +23,24 @@
                 </div>
             </div>
 
-
             <div class="content">
-                    <h3 class="text-center">INGREDIENTS</h3>
-                    <div class="row content">
-                        <div class="col-10"></div>
-                        <div class="col-80">
-                            <ion-item ng-repeat="ingredient in ingredients track by $index">
+                <h3 class="text-center">INGREDIENTS</h3>
+                <div class="row content">
+                    <div class="col-10"></div>
+                    <div class="col-80">
+                        <ion-item ng-repeat="ingredient in ingredients track by $index">
                             <div class="row content-detail">
-                                <img src="../img/tool.png" class="img-responsive tool">
+                                <img src="../img/tool-sel.png" class="img-responsive tool">
                                 <p>{{ingredient}}</p>
                             </div>
-                            </ion-item>
-                        </div>
-                        <div class="col-10"></div>
+                        </ion-item>
                     </div>
+                    <div class="col-10"></div>
+                </div>
             </div>
-                <a href="" class="start"> COMMENCER </a>
+            <a href="" class="start"> COMMENCER </a>
             </div>
+
 
         </section>
     </ion-content>

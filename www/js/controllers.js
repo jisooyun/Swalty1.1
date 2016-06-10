@@ -2,6 +2,7 @@ angular.module('starter.controllers', [])
 
 .config(function($ionicConfigProvider) {
    $ionicConfigProvider.tabs.position('bottom');
+
 })
 
 
@@ -21,11 +22,17 @@ angular.module('starter.controllers', [])
 })
 
 //AFFICHER LES RECETTES SINGLE
-.controller('SingleController', function($scope, Recettes, myService){
+.controller('SingleController', function($scope, Recettes, myService, $ionicViewService){
 
   $scope.single = myService.get();
   $scope.ingredients = single.ingredient;
+
+    $scope.backView = function(){
+        $ionicViewService.getBackView().go();
+    }
+
 })
+
 
 //DETAILS DES RECETTES
 .controller('RecetteDetailCtrl', function($scope, $stateParams, Recettes) {
@@ -72,6 +79,5 @@ angular.module('starter.controllers', [])
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true
-  }
-
+  };
 });

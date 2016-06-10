@@ -4,8 +4,8 @@
 
         <section class="page">
 
-            <div class="bg-gaufre-sel">
-                <a class="button icon-left ion-chevron-left button-clear button-ligth ion-ios-arrow-thin-left" ui-sref="tab.sucre">
+            <div class="bg-list bg-crepe-sel">
+                <a class="button icon-left ion-chevron-left button-clear button-ligth ion-ios-arrow-thin-left" ui-sref="tab.sel">
                 </a>
                 <h1 class="text-center"> GAUFRE </h1>
             </div>
@@ -13,10 +13,11 @@
 
             <!--LISTE DES RECETTES -->
 
+
             <ion-list ng-controller="RecetteController">
                 <ion-item ng-repeat="recette in recettes">
-                    <a class="item item-thumbnail-left" href="#">
-                        <img src="img/ionic.png">
+                    <a class="item item-thumbnail-left item-sel" ui-sref="sel-detail" ng-click="single(single)">
+                        <img src="img/gaufre-sucre.jpg">
                         <h2>{{recette.titre}}</h2>
                         <p>Durée : {{recette.temps}} minutes</p>
                         <p> Pour  : {{recette.nbPersonne}} personnes</p>
@@ -24,6 +25,7 @@
                     </a>
                 </ion-item>
             </ion-list>
+
 
 
 

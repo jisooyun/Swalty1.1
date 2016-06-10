@@ -80,11 +80,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           templateUrl: 'templates/categSucre/gaufre-sucre.html'
 
       })
-      .state('sucre-detail', {
-          url: '/sucre-detail',
-          templateUrl: 'templates/sucre-detail.html',
-
-      })
 
       ////// MUFFINS
       .state('muffin-sel', {
@@ -136,14 +131,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           templateUrl: 'templates/categSucre/event-sucre.html'
       })
 
-      .state('tab.recette-detail', {
-          url: '/recettes/:recettesId',
-          views: {
-              'tab-chats': {
-                  templateUrl: 'templates/recette-detail.html',
-                  controller: 'RecetteDetailCtrl'
-              }
-          }
+      ////// DETAIL PAGES 
+
+      .state('sucre-detail', {
+          url: '/sucre-detail',
+          templateUrl: 'templates/sucre-detail.html',
+      })
+
+      .state('sel-detail', {
+          url: '/sel-detail',
+          templateUrl: 'templates/sel-detail.html',
       })
 
 
