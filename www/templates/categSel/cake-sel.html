@@ -5,7 +5,7 @@
         <section class="page">
 
             <div class="bg-list bg-crepe-sel">
-                <a class="button icon-left ion-chevron-left button-clear button-ligth ion-ios-arrow-thin-left" ui-sref="tab.sel">
+                <a class="button icon-left ion-chevron-left button-clear button-ligth ion-ios-arrow-thin-left" ui-sref="sel">
                 </a>
                 <h1 class="text-center"> CAKE </h1>
             </div>
@@ -27,7 +27,19 @@
             </ion-list>
 
 
+            <ion-tabs class="tabs-icon-top tabs-color-active-positive" ng-controller="TabsCtrl">
+                <!-- Dashboard Tab -->
+                <ion-tab title="Home" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" ui-sref="homepage">
+                    <ion-nav-view name="tab-homepage"></ion-nav-view>
+                </ion-tab>
 
+                <!-- Sucre Tab -->
+                <ion-tab title="Sucre" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" ui-sref="sucre">
+                    <ion-nav-view name="tab-sucre"></ion-nav-view>
+                </ion-tab>
+
+
+            </ion-tabs>
 
         </section>
     </ion-content>
