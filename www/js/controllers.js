@@ -1,5 +1,6 @@
 angular.module('starter.controllers', [])
 
+
 .config(function($ionicConfigProvider) {
    $ionicConfigProvider.tabs.position('bottom');
 
@@ -93,7 +94,7 @@ angular.module('starter.controllers', [])
 
 
 //authInscription
-.controller('AuthController', function($scope) {
+.controller('AuthController', function($scope, authProvider) {
 
     $scope.addUser = function() {
         var ref = new Firebase("https://swaltyapp.firebaseio.com");
@@ -111,7 +112,19 @@ angular.module('starter.controllers', [])
                 if (error) {
                     console.log("Error creating user:", error);
                 } else {
+                  authProvider.set(1);
+                  $location.path("/homepage");
+                  console.log(userData);
                     console.log("Successfully created user account with uid:", userData.uid);
+                    var favoris = [0];
+                    var ref = new Firebase("https://swaltyapp.firebaseio.com");
+                    ref.child("users").child(userData.uid).set({
+                    provider: "password",
+                    name: pseudo,
+                    fav: favoris,
+                    sucre: 0,
+                    sel: 0
+                });
                 }
             });
         }
@@ -141,5 +154,52 @@ angular.module('starter.controllers', [])
 
         })
     }
-});
+})
 
+
+//SE CONNECTER VIA FACEBOOK
+.controller("UserController", ["$scope", "Auth", "$state",
+    function($scope, Auth, $state) {
+        $scope.auth = Auth;
+
+        // any time auth status updates, add the user data to scope
+        $scope.auth.$onAuth(function(authData) {
+            $scope.authData = authData;
+            $state.transitionTo("homepage");
+        });
+
+        // we would probably save a profile when we register new users on our site
+        // we could also read the profile to see if it's null
+        // here we will just simulate this with an isNewUser boolean
+        var isNewUser = true;
+
+        var ref = new Firebase("https://swaltyapp.firebaseio.com");
+        ref.onAuth(function(authData) {
+            if (authData && isNewUser) {
+                var favoris = [0];
+                // save the user's profile into the database so we can list users,
+                // use them in Security and Firebase Rules, and show profiles
+                ref.child("users").child(authData.uid).set({
+                    provider: authData.provider,
+                    name: getName(authData),
+                    fav: favoris,
+                    sucre: 0,
+                    sel: 0
+                });
+            }
+        });
+
+        // find a suitable name based on the meta info given by each provider
+        function getName(authData) {
+            switch(authData.provider) {
+                case 'password':
+                    return authData.password.email.replace(/@.*/, '');
+                case 'twitter':
+                    return authData.twitter.displayName;
+                case 'facebook':
+                    return authData.facebook.displayName;
+            }
+        }
+    }
+
+]);
