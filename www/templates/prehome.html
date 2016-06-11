@@ -1,0 +1,23 @@
+<ion-view view-title="prehome">
+
+    <ion-content scroll="false" ng-controller="UserController">
+
+        <section class="page_prehome">
+
+                <img src="../img/logo_swalty.png" class="img-responsive logo_app">
+
+                <h1> SWALTY </h1>
+
+            <a href=""> déjà un compte ? </a>
+            <button ui-sref="register" class="btn_inscription"> Inscription </button>
+            <button class="btn_connexionfb" ng-click="auth.$authWithOAuthPopup('facebook')">Connexion Facebook</button>
+
+
+            <div ng-show="authData">
+                <button ng-click="auth.$unauth()">Déconnexion</button>
+            </div>
+
+        </section>
+
+    </ion-content>
+</ion-view>
