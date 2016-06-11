@@ -1,14 +1,30 @@
 <ion-view view-title="Account">
-  <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
-    <div ng-controller="UserController">
+  <ion-content scroll="false">
+
+    <div class="page-profil" ng-controller="UserController">
         <div ng-show="authData">
-            <!-- <p>Hello, {{ authData.facebook.displayName }}</p> -->
-            <button ng-click="auth.$unauth()">Logout</button>
+
+
+            <img src="{{ authData.facebook.profileImageURL }}" class="profil-photo">
+
+            <h1> {{ authData.facebook.displayName }} </h1>
+            <h2> titre du user </h2>
+
+            <div class="list form-profil">
+                <label class="item item-input" ui-sref="profil-titre">
+                   <p> MES TITRES  </p>
+                </label>
+                <label class="item item-input">
+                    <p> MES FAVORIS </p>
+                </label>
+                <label class="item item-input">
+                    <p> PARAMETRES DE NOTIFICATIONS </p>
+                </label>
+            </div>
+
+            <button class="btn-note" ng-click="auth.$unauth()"> Noter l'application </button>
+            <button class="btn-logout" ng-click="auth.$unauth()"> Déconnexion </button>
         </div>
-    </ion-list>
+
   </ion-content>
 </ion-view>

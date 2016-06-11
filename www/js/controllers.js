@@ -94,7 +94,7 @@ angular.module('starter.controllers', [])
 
 
 //authInscription
-.controller('AuthController', function($scope, authProvider) {
+.controller('AuthController', function($scope, authProvider, $location) {
 
     $scope.addUser = function() {
         var ref = new Firebase("https://swaltyapp.firebaseio.com");
