@@ -5,7 +5,7 @@
         <section class="page-ingre page-ingre-sel">
 
             <div class="bg-ingre ingre ingre-sel">
-                <a ng-click="backView()" class="button icon-left ion-chevron-left button-clear button-ligth ion-ios-arrow-thin-left">
+                <a ng-click="backView()" class="boutonRetour button icon-left ion-chevron-left button-clear button-ligth ion-ios-arrow-thin-left">
                 </a>
                 <h2 class="text-center">{{single.titre}}</h2>
             </div>
@@ -25,10 +25,10 @@
 
             <div class="content">
                 <h3 class="text-center">INGREDIENTS</h3>
-                <div class="row content">
+                <div class="row">
                     <div class="col-10"></div>
                     <div class="col-80">
-                        <ion-item ng-repeat="ingredient in ingredients track by $index">
+                        <ion-item ng-repeat="ingredient in ingredients track by $index" ng-if="ingredient">
                             <div class="row content-detail">
                                 <img src="../img/tool-sel.png" class="img-responsive tool">
                                 <p>{{ingredient}}</p>

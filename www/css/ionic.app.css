@@ -10154,6 +10154,9 @@ LISTE DES RECETTES SEL
 .item-sel h2 {
   color: #c7f464 !important; }
 
+.page h1 {
+  text-shadow: 0px 4px 7px rgba(0, 0, 0, 0.5); }
+
 /*---------------------------------------------------------
  POLICES DES LISTES
  ---------------------------------------------------------*/
@@ -10247,6 +10250,7 @@ LISTE DES RECETTES SEL
 
 /* PAGE ETAPES */
 .content-etape {
+  max-height: 360px !important;
   text-align: center;
   margin-bottom: 15px; }
 
@@ -10272,3 +10276,10 @@ LISTE DES RECETTES SEL
 
 .tab-nav, .tabs {
   background-color: white; }
+
+/* BOUTON RETOUR DE TOUTES LES PAGES */
+.boutonRetour {
+  margin-top: 15px;
+  margin-left: 15px;
+  color: #fff !important;
+  text-shadow: 0px 4px 7px rgba(0, 0, 0, 0.5) !important; }

@@ -1,1 +1,37 @@
-/* Empty. Add your own CSS if you like */
+
+@font-face {
+    font-family: 'champagne__limousinesBdIt';
+    src: url('../fonts/champagne__limousines_bold_italic-webfont.woff2') format('woff2'),
+    url('../fonts/champagne__limousines_bold_italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'champagne__limousinesbold';
+    src: url('../fonts/champagne__limousines_bold-webfont.woff2') format('woff2'),
+    url('../fonts/champagne__limousines_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'champagne__limousinesitalic';
+    src: url('../fonts/champagne__limousines_italic-webfont.woff2') format('woff2'),
+    url('../fonts/champagne__limousines_italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'champagne__limousinesregular';
+    src: url('../fonts/champagne__limousines-webfont.woff2') format('woff2'),
+    url('../fonts/champagne__limousines-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}/* Empty. Add your own CSS if you like */
+
+body p, h1, h2, a, h3, h4 {
+    font-family: 'champagne__limousinesregular';
+}
+

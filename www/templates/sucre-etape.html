@@ -13,11 +13,11 @@
             <div class="row"></div>
 
             <div class="content content-etape">
-                <h3 class="text-center">ETAPE</h3>
+                <h3 class="text-center">PRÊT, FEU, CUISINEZ </h3>
                 <div class="row content">
                     <div class="col-10"></div>
                     <div class="col-80">
-                        <ion-item ng-repeat="etape in etapes track by $index">
+                        <ion-item ng-repeat="etape in etapes track by $index" ng-if="etape">
                             <div class="row content-detail">
                                 <img src="../img/tool-sel.png" class="img-responsive tool">
                                 <p>{{etape}}</p>
