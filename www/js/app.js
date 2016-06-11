@@ -22,7 +22,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -185,6 +185,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/homepage');
+  // if (authProvider.get === 1) {
+  //   $urlRouterProvider.otherwise('/homepage');
+  // }else if (authProvider.get === 0){
+    $urlRouterProvider.otherwise('/login');
+  // };
+  
 
 });
