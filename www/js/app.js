@@ -147,9 +147,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           templateUrl: 'templates/sel-etape.html'
       })
 
+      .state('prehome', {
+          url: '/prehome',
+          templateUrl: 'templates/prehome.html'
+      })
       .state('login', {
           url: '/login',
           templateUrl: 'templates/login.html'
+      })
+      .state('register', {
+          url: '/register',
+          templateUrl: 'templates/register.html'
       })
 
 
@@ -188,7 +196,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   // if (authProvider.get === 1) {
   //   $urlRouterProvider.otherwise('/homepage');
   // }else if (authProvider.get === 0){
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/prehome');
   // };
   
 

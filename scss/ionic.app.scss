@@ -64,7 +64,7 @@ $ombreTxt: 0px 4px 7px rgba(0, 0, 0, 0.5);
 
 //CORPS
 
-h1, h2, h3, h4, p, a {
+h1, h2, h3, h4, p, a, button {
   font-family: 'champagne__limousinesregular';
 }
 
@@ -659,4 +659,115 @@ LISTE DES RECETTES SEL
   margin-left: 15px;
   color: $blanc !important;
   text-shadow: $ombreTxt !important;
+}
+
+/*---------------------------------------------------------
+
+
+    PREHOME
+
+
+---------------------------------------------------------*/
+
+.page_prehome {
+  height: 80%;
+  background-size: cover;
+  background-image: url('../img/bg_prehome.png');
+  width: 100%;
+  
+  h1 {
+    text-align: center !important;
+    color: $marron;
+    letter-spacing: 6px !important;
+  }
+
+  .logo_app {
+    padding-top: 100px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  a {
+    position: absolute;
+    bottom: 150px;
+    color: $marron !important;
+    font-size: 1.2em;
+    margin-left: 35%;
+  }
+}
+
+.btn_inscription{
+  font-size: 1.7em;
+  position: absolute;
+  text-transform: uppercase;
+  height: 70px;
+  width: 100%;
+  border: none;
+  background-color: $rose !important;
+  color: $blanc;
+  bottom: 70px;
+  left: 0;
+}
+
+.btn_connexionfb{
+  font-size: 1.7em;
+  text-transform: uppercase;
+  height: 70px;
+  position: absolute;
+  width: 100%;
+  border: none;
+  background-color: $vert !important;
+  color: $marron;
+  bottom: 0;
+  left: 0;
+}
+
+/*---------------------------------------------------------
+
+
+    REGISTER
+
+
+---------------------------------------------------------*/
+
+.page_register {
+  height: 100%;
+  background-size: cover;
+  background-image: url('../img/bg_prehome.png');
+  width: 100%;
+
+  h1 {
+    text-align: center !important;
+    color: $marron;
+    letter-spacing: 6px !important;
+  }
+
+  .logo_app {
+    padding-top: 100px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+}
+
+.form_register {
+  position: absolute;
+  bottom: 40px;
+  width: 100% !important;
+}
+
+.btn_register {
+  text-transform: uppercase;
+  font-size: 1.7em !important;
+  border-radius: initial !important;
+  background-color: $rose !important;
+  color: $blanc;
+  height: 60px;
+  width: 100%;
+  position: absolute;
+  bottom: 0 !important;
 }
