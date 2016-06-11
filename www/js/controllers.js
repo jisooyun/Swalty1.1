@@ -165,7 +165,7 @@ angular.module('starter.controllers', [])
         // any time auth status updates, add the user data to scope
         $scope.auth.$onAuth(function(authData) {
             $scope.authData = authData;
-            $state.transitionTo("homepage");
+            
         });
 
         // we would probably save a profile when we register new users on our site
@@ -186,6 +186,7 @@ angular.module('starter.controllers', [])
                     sucre: 0,
                     sel: 0
                 });
+                $state.go("homepage");
             }
         });
 

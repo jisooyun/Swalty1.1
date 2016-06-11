@@ -4,6 +4,11 @@
     <ion-toggle  ng-model="settings.enableFriends">
         Enable Friends
     </ion-toggle>
+    <div ng-controller="UserController">
+        <div ng-show="authData">
+            <!-- <p>Hello, {{ authData.facebook.displayName }}</p> -->
+            <button ng-click="auth.$unauth()">Logout</button>
+        </div>
     </ion-list>
   </ion-content>
 </ion-view>
