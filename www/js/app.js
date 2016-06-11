@@ -147,6 +147,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           templateUrl: 'templates/sel-etape.html'
       })
 
+      .state('login', {
+          url: '/login',
+          templateUrl: 'templates/login.html'
+      })
+
 
 
 

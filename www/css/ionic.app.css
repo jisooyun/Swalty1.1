@@ -10258,3 +10258,17 @@ LISTE DES RECETTES SEL
 
 .page-etape .start {
   margin-left: 25% !important; }
+
+/* TABS */
+.tabs-color-active-positive .tab-item.tab-item-active,
+.tabs-color-active-positive .tab-item.active, .tabs-color-active-positive .tab-item.activated {
+  color: #ff6b6b; }
+
+.tab-item {
+  color: #909090; }
+
+.tab-item-active {
+  color: #ff6b6b; }
+
+.tab-nav, .tabs {
+  background-color: white; }
