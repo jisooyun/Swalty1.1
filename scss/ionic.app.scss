@@ -493,6 +493,10 @@ LISTE DES RECETTES SEL
   color: $vert !important;
 }
 
+.page h1 {
+  text-shadow: $ombreTxt;
+}
+
 /*---------------------------------------------------------
  POLICES DES LISTES
  ---------------------------------------------------------*/
@@ -608,6 +612,7 @@ LISTE DES RECETTES SEL
 /* PAGE ETAPES */
 
 .content-etape{
+  max-height: 360px !important;
   text-align: center;
   margin-bottom: 15px;
 }
@@ -645,4 +650,13 @@ LISTE DES RECETTES SEL
 
 .tab-nav, .tabs{
   background-color: white;
+}
+
+/* BOUTON RETOUR DE TOUTES LES PAGES */
+
+.boutonRetour {
+  margin-top: 15px;
+  margin-left: 15px;
+  color: $blanc !important;
+  text-shadow: $ombreTxt !important;
 }
