@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'firebase'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'firebase', 'ui.router'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -188,7 +188,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   // if (authProvider.get === 1) {
   //   $urlRouterProvider.otherwise('/homepage');
   // }else if (authProvider.get === 0){
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/homepage');
   // };
   
 
