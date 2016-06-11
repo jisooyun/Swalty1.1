@@ -47,7 +47,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   })
 
       //PAGE SUCRE & SALE
-      .state('sucre', {
+     .state('sucre', {
         url: '/sucre',
         templateUrl: 'templates/sucre.html'
 
