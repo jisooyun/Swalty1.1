@@ -12,7 +12,7 @@
 
         <ion-list scroll="true" ng-controller="RecetteController">
             <ion-item ng-repeat="recette in recettes" ng-if="recette.categRecette == 'event' && recette.typeRecette == 'sucre'">
-                <a class="item item-thumbnail-left" ui-sref="sel-detail">
+                <a class="item item-thumbnail-left" ui-sref="sucre-detail">
                     <img src="img/event-sucre.jpg">
                     <h2>{{recette.titre}}</h2>
                     <p>Durée : {{recette.temps}} minutes</p>
