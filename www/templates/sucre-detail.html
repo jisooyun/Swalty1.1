@@ -11,8 +11,9 @@
             </div>
 
             <div class="row resume">
-                <div class="col col-30 col-offset-10">
-                    <button class="button-light button-clear ion-ios-heart-outline pull-right"></button>
+                <button type="submit" ng-click="isFav(recette)" class="button-light button-clear ion-ios-heart-outline pull-right" ng-style="Favoris"></button> 
+
+                <button type="submit" ng-click="delFav(recette)" class="button-light button-clear ion-ios-heart-outline pull-right" ng-style="delFavoris"></button>
 
                 </div>
                 <div class="col col-20">

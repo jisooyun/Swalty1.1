@@ -31,7 +31,7 @@ angular.module('starter.controllers', [])
 })
 
 //AFFICHER LES RECETTES SINGLE
-.controller('SingleController', function($scope, Recettes, myService, $ionicViewService){
+.controller('SingleController', function($scope, Recettes, myService, $ionicViewService,  myService, updateFav){
 
   $scope.single = myService.get();
   $scope.ingredients = single.ingredient;
@@ -40,6 +40,107 @@ angular.module('starter.controllers', [])
     $scope.backView = function(){
         $ionicViewService.getBackView().go();
     }
+
+    $scope.single = myService.get();
+  single = $scope.single;
+
+
+  //Add Favoris dans Users
+  var ref = new Firebase("https://swaltyapp.firebaseio.com/users");
+// Attach an asynchronous callback to read the data at our posts reference
+  ref.on("value", function(snapshot) {
+    //Hide btn
+    $scope.isFavoris = function(){
+    var auth = ref.getAuth();
+    var idUtilisateur = auth.uid;
+    var usersRef = ref.child(idUtilisateur);
+      var path = usersRef.toString();
+      var userRef = new Firebase(path);
+      userRef.on("value", function(snap){
+        var id = single.$id;
+        var tokenFavoris = 0
+        var banane = snap.val().fav;
+        for (var i = banane.length - 1; i >= 0; i--) {
+                if (banane[i] === id) {
+                    tokenFavoris = 1
+                };
+            }
+        if (tokenFavoris == 1) {
+            $scope.Favoris = {display : "none"}; 
+      }else{
+        $scope.delFavoris = {display : "none"}; 
+      }
+    });
+  }
+
+    $scope.isFav = function(){
+        var auth = ref.getAuth();
+      var idUtilisateur = auth.uid;
+
+      var usersRef = ref.child(idUtilisateur);
+      var path = usersRef.toString();
+      console.log(ref)
+      var userRef = new Firebase(path);
+      userRef.on("value", function(snap){
+        var id = single.$id;
+        var tokenFav = 0
+        var banane = snap.val().fav;
+        for (var i = banane.length - 1; i >= 0; i--) {
+                if (banane[i] === id) {
+                    tokenFav = 1
+                };
+            }
+        if (tokenFav != 1) {
+            
+            banane.push(id);
+            updateFav.set(banane);
+        }else{
+            banane = snap.val().fav;
+            updateFav.set(banane);
+        }
+      })
+      banane = updateFav.get();
+      userRef.update({
+             fav : banane
+        });
+
+    
+        
+        }
+    });
+
+
+  //Delete Favoris dans Users
+  var ref = new Firebase("https://swaltyapp.firebaseio.com/users");
+// Attach an asynchronous callback to read the data at our posts reference
+  ref.on("value", function(snapshot) {
+    $scope.delFav = function(){
+        var auth = ref.getAuth();
+        var idUtilisateur = auth.uid;
+        var usersRef = ref.child(idUtilisateur);
+        var path = usersRef.toString();
+        var userRef = new Firebase(path);
+        userRef.on("value", function(snap){
+            var banane = snap.val().fav;
+            var id = single.$id;
+            for (var i = banane.length - 1; i >= 0; i--) {
+                if (banane[i] === id) {
+                    banane.splice(i,1);
+                };
+            }
+            updateFav.set(banane);
+        })
+        banane = updateFav.get();
+        userRef.update({
+            fav : banane
+        });
+
+    
+        
+  }
+    
+
+    });
 
 })
 
