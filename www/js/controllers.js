@@ -257,7 +257,7 @@ angular.module('starter.controllers', [])
 
 //SE CONNECTER VIA FACEBOOK
 .controller("UserController", ["$scope", "Auth", "$state",
-    function($scope, Auth, $state, $ionicPopup, $timeout) {
+    function($scope, Auth, $state) {
         $scope.auth = Auth;
 
         // any time auth status updates, add the user data to scope
@@ -304,9 +304,8 @@ angular.module('starter.controllers', [])
 ])
 
 //PROFIL
-.controller("ProfilController", ["$scope", "Auth", "$state",
+.controller("ProfilController", ["$scope", "Auth",
     function($scope, Auth) {
-
         $scope.auth = Auth;
 
         // any time auth status updates, add the user data to scope
@@ -314,38 +313,6 @@ angular.module('starter.controllers', [])
             $scope.authData = authData;
         });
 
-        // we would probably save a profile when we register new users on our site
-        // we could also read the profile to see if it's null
-        // here we will just simulate this with an isNewUser boolean
-        var isNewUser = true;
-
-        var ref = new Firebase("https://swaltyapp.firebaseio.com");
-        ref.onAuth(function(authData) {
-            if (authData && isNewUser) {
-                var favoris = [0];
-                // save the user's profile into the database so we can list users,
-                // use them in Security and Firebase Rules, and show profiles
-                ref.child("users").child(authData.uid).set({
-                    provider: authData.provider,
-                    name: getName(authData),
-                    fav: favoris,
-                    sucre: 0,
-                    sel: 0
-                });
-            }
-        });
-
-        // find a suitable name based on the meta info given by each provider
-        function getName(authData) {
-            switch(authData.provider) {
-                case 'password':
-                    return authData.password.email.replace(/@.*/, '');
-                case 'twitter':
-                    return authData.twitter.displayName;
-                case 'facebook':
-                    return authData.facebook.displayName;
-            }
-        }
     }
 
 ]);
