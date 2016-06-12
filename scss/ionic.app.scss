@@ -591,7 +591,7 @@ LISTE DES RECETTES SEL
 
 .content{
   text-align: center;
-  max-height: 300px !important;
+  max-height: 280px !important;
   overflow: auto;
   margin-bottom: 15px;
 }
@@ -602,9 +602,11 @@ LISTE DES RECETTES SEL
 }
 
 .content-detail p{
-  padding-top: 8%;
+  white-space: initial;
+  text-align: justify;
   word-wrap: break-word;
   font-size: 1.2em;
+  line-height: 100%;
 }
 
 .tool{
@@ -617,23 +619,27 @@ LISTE DES RECETTES SEL
 .start{
   text-align: center;
   border: 0.5px solid $rose;
-  color: $grisclair;
-  font-size: 18px;
-  padding : 2% 20% 2% 20%;
-  margin-left: 18%;
+  color: $blanc;
+  background-color: $rose;
+  font-size: 20px;
+  padding : 3% 25% 3% 25%;
+  margin-left: 12%;
   border-radius: 10px;
+  margin-bottom: 5px !important;
 }
 
 .page-ingre-sel .start {
+  background-color: $vert;
   border: 0.5px solid $vert;
+  color: $marron !important;
 }
 
 /* PAGE ETAPES */
 
 .content-etape{
-  max-height: 360px !important;
+  max-height: 330px !important;
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .content-etape p {
@@ -645,7 +651,7 @@ LISTE DES RECETTES SEL
 
 .page-etape{
   .start{
-    margin-left: 25% !important;
+    margin-left: 16% !important;
   }
 }
 
@@ -892,14 +898,4 @@ LISTE DES RECETTES SEL
 .taille{
   width :20%;
   padding-left: 7%;
-}
-
-
-
-
-.content-detail p{
-  text-align: justify;
-  white-space: normal !important;
-  line-height: 90% !important;
-  padding-top: 0 !important;
 }
