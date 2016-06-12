@@ -10075,6 +10075,9 @@ a {
 .bg-muffin-sel {
   background-image: url("../img/bg-muffin-sel.jpg"); }
 
+.bg-cookie-sel {
+  background-image: url("../img/cookie-sale.jpg"); }
+
 /*---------------------------------------------------------
 
 
@@ -10113,7 +10116,10 @@ a {
 
 ---------------------------------------------------------*/
 .bg-gaufre-sel {
-  background-image: url("../img/gaufre-sel.jpg"); }
+  background-image: url("../img/gaufre-sale.jpg"); }
+
+.bg-cake-sel {
+  background-image: url("../img/cake-sale.jpg"); }
 
 /*---------------------------------------------------------
 
@@ -10124,6 +10130,12 @@ a {
 ---------------------------------------------------------*/
 .bg-crepe-sel {
   background-image: url("../img/crepe-sale.jpg"); }
+
+.bg-event-sel {
+  background-image: url("../img/event-sel.jpg"); }
+
+.bg-event-sucre {
+  background-image: url("../img/event-sucre.jpg"); }
 
 /* ---------------------------------------------------------
 LISTE DES RECETTES SUCRE
@@ -10177,7 +10189,7 @@ LISTE DES RECETTES SEL
 
 ---------------------------------------------------------*/
 .bg-ingre {
-  background-image: url("../img/bg-gaufre-sucre.jpg");
+  background-image: url("../img/bg2.jpg");
   background-size: cover;
   height: 25%; }
 
@@ -10449,8 +10461,14 @@ LISTE DES RECETTES SEL
 .nav-icon {
   margin-top: 0;
   font-size: 35px;
-  padding: 0% 40% 0% 40%;
   color: #909090; }
 
-.nav-icon a:focus {
-  color: #ff6b6b; }
+.taille {
+  width: 20%;
+  padding-left: 7%; }
+
+.content-detail p {
+  text-align: justify;
+  white-space: normal !important;
+  line-height: 90% !important;
+  padding-top: 0 !important; }

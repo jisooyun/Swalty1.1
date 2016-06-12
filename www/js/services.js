@@ -22,6 +22,7 @@ angular.module('starter.services', ['firebase'])
   var newFav = {}
   function set(data){
     newFav = data;
+    
   }
   function get(){
     return newFav;

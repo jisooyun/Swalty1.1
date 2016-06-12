@@ -4,7 +4,7 @@
 
         <section class="page">
 
-            <div class="bg-list bg-crepe-sel">
+            <div class="bg-list bg-cake-sel">
                 <a class="boutonRetour button icon-left ion-chevron-left button-clear button-ligth ion-ios-arrow-thin-left" ui-sref="sel">
                 </a>
                 <h1 class="text-center"> CAKE </h1>
@@ -17,7 +17,7 @@
             <ion-list ng-controller="RecetteController">
                 <ion-item ng-repeat="recette in recettes" ng-if="recette.categRecette == 'cake' && recette.typeRecette == 'sel'">
                     <a class="item item-thumbnail-left item-sel" ui-sref="sel-detail" ng-click="single(single)">
-                        <img src="img/gaufre-sucre.jpg">
+                        <img src="img/cake-sale.jpg">
                         <h2>{{recette.titre}}</h2>
                         <p>Durée : {{recette.temps}} minutes</p>
                         <p> Pour  : {{recette.nbPersonne}} personnes</p>
