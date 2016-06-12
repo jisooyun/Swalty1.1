@@ -31,7 +31,7 @@ angular.module('starter.controllers', [])
 })
 
 //AFFICHER LES RECETTES SINGLE
-.controller('SingleController', function($scope, Recettes, myService, $ionicViewService,  myService, updateFav){
+.controller('SingleController', function($scope, Recettes, $ionicViewService,  myService, updateFav){
 
   $scope.single = myService.get();
   $scope.ingredients = single.ingredient;
@@ -39,10 +39,10 @@ angular.module('starter.controllers', [])
 
     $scope.backView = function(){
         $ionicViewService.getBackView().go();
-    }
+    };
 
     $scope.single = myService.get();
-  single = $scope.single;
+    single = $scope.single;
 
 
   //Add Favoris dans Users
@@ -58,37 +58,38 @@ angular.module('starter.controllers', [])
       var userRef = new Firebase(path);
       userRef.on("value", function(snap){
         var id = single.$id;
-        var tokenFavoris = 0
+        var tokenFavoris = 0;
         var banane = snap.val().fav;
         for (var i = banane.length - 1; i >= 0; i--) {
                 if (banane[i] === id) {
                     tokenFavoris = 1
-                };
+                }
             }
-        if (tokenFavoris == 1) {
-            $scope.Favoris = {display : "none"}; 
-      }else{
-        $scope.delFavoris = {display : "none"}; 
-      }
+
+          if (tokenFavoris == 1) {
+              $scope.Favoris = {"display" : "none"};
+          }else{
+              $scope.delFavoris = {"display" : "none"};
+          }
     });
-  }
+  };
 
     $scope.isFav = function(){
-        var auth = ref.getAuth();
+      var auth = ref.getAuth();
       var idUtilisateur = auth.uid;
 
       var usersRef = ref.child(idUtilisateur);
       var path = usersRef.toString();
-      console.log(ref)
+      console.log(ref);
       var userRef = new Firebase(path);
       userRef.on("value", function(snap){
         var id = single.$id;
-        var tokenFav = 0
+        var tokenFav = 0;
         var banane = snap.val().fav;
         for (var i = banane.length - 1; i >= 0; i--) {
                 if (banane[i] === id) {
                     tokenFav = 1
-                };
+                }
             }
         if (tokenFav != 1) {
             
@@ -98,15 +99,13 @@ angular.module('starter.controllers', [])
             banane = snap.val().fav;
             updateFav.set(banane);
         }
-      })
+      });
       banane = updateFav.get();
       userRef.update({
              fav : banane
         });
-
-    
-        
         }
+
     });
 
 
@@ -134,11 +133,8 @@ angular.module('starter.controllers', [])
         userRef.update({
             fav : banane
         });
-
-    
-        
   }
-    
+
 
     });
 
