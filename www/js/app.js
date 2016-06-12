@@ -178,6 +178,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           templateUrl: 'templates/user.html'
       })
 
+      .state('favoris', {
+          url: '/favoris',
+          templateUrl: 'templates/favoris.html'
+      })
+
 
 
 

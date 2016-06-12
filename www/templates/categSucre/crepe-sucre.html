@@ -15,7 +15,7 @@
 
             <ion-list ng-controller="RecetteController">
                 <ion-item ng-repeat="recette in recettes" ng-if="recette.categRecette == 'crepe' && recette.typeRecette == 'sucre'">
-                    <a class="item item-thumbnail-left" href="#">
+                    <a class="item item-thumbnail-left" ui-sref="sucre-detail" ng-click="single(single)">
                         <img src="img/gaufre-sucre.jpg">
                         <h2>{{recette.titre}}</h2>
                         <p>Durée : {{recette.temps}} minutes</p>

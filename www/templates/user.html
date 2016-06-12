@@ -7,7 +7,7 @@
 
             <div ng-show="authData">
 
-                <img src="{{ authData.facebook.profileImageURL }}" class="profil-photo">
+                <img ng-if="auth" src="{{ authData.facebook.profileImageURL }}" class="profil-photo">
 
                 <h1> {{ authData.facebook.displayName }} </h1>
                 <h2> titre du user </h2>
@@ -24,8 +24,8 @@
                     </label>
                 </div>
 
-                <button class="btn-note" ng-click="auth.$unauth()"> Noter l'application </button>
-                <button class="btn-logout" ng-click="auth.$unauth()"> Déconnexion </button>
+                <!--<button class="btn-note" ng-click="auth.$unauth()"> Noter l'application </button>-->
+                <button class="btn-logout" ng-click="auth.$unauth()" ui-sref="prehome"> Déconnexion </button>
             </div>
 
     </ion-content>
