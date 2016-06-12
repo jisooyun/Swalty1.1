@@ -10177,7 +10177,7 @@ LISTE DES RECETTES SEL
 
 ---------------------------------------------------------*/
 .bg-ingre {
-  background-image: url("../img/bg-gaufre-sucre.jpg");
+  background-image: url("../img/bg2.jpg");
   background-size: cover;
   height: 25%; }
 
@@ -10448,3 +10448,9 @@ LISTE DES RECETTES SEL
 
 .nav-icon a:focus {
   color: #ff6b6b; }
+
+.content-detail p {
+  text-align: justify;
+  white-space: normal !important;
+  line-height: 90% !important;
+  padding-top: 0 !important; }
