@@ -15,7 +15,7 @@
                     
                     <button type="submit" ng-click="isFav(recette)" class="button-light button-clear ion-ios-heart-outline pull-right" ng-style="Favoris"></button> 
 
-                    <button type="submit" ng-click="delFav(recette)" class="button-light button-clear ion-ios-heart-outline pull-right" ng-style="delFavoris"></button>
+                    <button type="submit" ng-click="delFav(recette)" class="button-light button-clear ion-ios-heart pull-right" ng-style="delFavoris"></button>
 
                 </div>
                 <div class="col col-20">
@@ -46,5 +46,7 @@
 
 
         </section>
+        <div ng-include src="'templates/nav-sel.html'"></div>
+
     </ion-content>
 </ion-view>
