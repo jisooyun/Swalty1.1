@@ -161,19 +161,23 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       })
 
 
-      .state('tab.account', {
-        url: '/account',
-        views: {
-          'tab-account': {
-            templateUrl: 'templates/tab-account.html',
-            controller: 'AccountCtrl'
-          }
-        }
-      })
 
       .state('profil-titre', {
           url: '/profil-titre',
           templateUrl: 'templates/profil-titre.html'
+      })
+
+      .state('nav', {
+          url: '/nav',
+          templateUrl: 'templates/nav.html'
+
+
+      })
+      .state('nav-sel', {
+          url: '/nav-sel',
+          templateUrl: 'templates/nav-sel.html'
+
+
       })
   ;
 
