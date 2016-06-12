@@ -282,10 +282,11 @@ a {
   background-image: url('../img/icon/crêpe-sel.png');
 
 }
-.paques-sel{
-  background-image: url('');
-
+.event-sel{
+  background-image: url('../img/icon/event-sel.png');
 }
+
+
 
 /* FIN IMAGES */
 
@@ -312,9 +313,8 @@ a {
   background-image: url('../img/icon/crêpe.png');
 
 }
-.paques{
-  background-image: url('');
-
+.event{
+  background-image: url('../img/icon/event-sucre.png');
 }
 
 /* FIN IMAGES */
@@ -807,6 +807,13 @@ LISTE DES RECETTES SEL
     height: 68px;
   }
 
+}
+
+.boutonRetourProfil {
+  padding-top: 15px;
+  margin-left: 15px;
+  color: $grisclair !important;
+  text-shadow: $ombreTxt !important;
 }
 
 .profil-photo {
