@@ -167,18 +167,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           templateUrl: 'templates/profil-titre.html'
       })
 
-      .state('nav', {
-          url: '/nav',
-          templateUrl: 'templates/nav.html'
+      .state('tab.account', {
+        url: '/account',
+        views: {
+            'tab-account': {
+                templateUrl: 'templates/tab-account.html',
+                controller: 'AccountCtrl'
+            }
+        }
+    })
 
 
-      })
-      .state('nav-sel', {
-          url: '/nav-sel',
-          templateUrl: 'templates/nav-sel.html'
-
-
-      })
   ;
 
   // if none of the above states are matched, use this as the fallback
