@@ -39,10 +39,10 @@ angular.module('starter.controllers', [])
 
     $scope.backView = function(){
         $ionicViewService.getBackView().go();
-    }
+    };
 
     $scope.single = myService.get();
-  single = $scope.single;
+    single = $scope.single;
 
 
   //Add Favoris dans Users
