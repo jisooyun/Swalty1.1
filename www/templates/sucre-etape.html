@@ -2,9 +2,9 @@
     <ion-content scroll="false"><!-- permet de rendre la  vue non scrollable-->
         <!-- BACKGROUND GAUFRE -->
 
-        <section class="page-ingre page-ingre-sel">
+        <section class="page-ingre page-ingre">
 
-            <div class="bg-ingre ingre ingre-sel">
+            <div class="bg-ingre ingre">
                 <a ng-click="backView()" class="boutonRetour button icon-left ion-chevron-left button-clear button-ligth ion-ios-arrow-thin-left">
                 </a>
                 <h2 class="text-center">{{single.titre}}</h2>
@@ -19,7 +19,7 @@
                     <div class="col-80">
                         <ion-item ng-repeat="etape in etapes track by $index" ng-if="etape">
                             <div class="row content-detail">
-                                <img src="../img/tool-sel.png" class="img-responsive tool">
+                                <img src="../img/tool.png" class="img-responsive tool">
                                 <p>{{etape}}</p>
                             </div>
                         </ion-item>
