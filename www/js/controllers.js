@@ -162,34 +162,6 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('DashCtrl', function($scope) {})
-
-.controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
-})
-
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
-})
-
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
-})
-
-
 //authInscription
 .controller('AuthController', function($scope, authProvider, $state) {
 
@@ -214,13 +186,17 @@ angular.module('starter.controllers', [])
                     console.log(userData);
                     console.log("Successfully created user account with uid:", userData.uid);
                     var favoris = [0];
+                    var titres = [0];
+                    var titre = "Inscit"; 
                     var ref = new Firebase("https://swaltyapp.firebaseio.com");
                     ref.child("users").child(userData.uid).set({
                     provider: "password",
                     name: pseudo,
                     fav: favoris,
                     sucre: 0,
-                    sel: 0
+                    sel: 0,
+                    titres: titres,
+                    titre: titre
                 });
                     $state.go("homepage");
                 }
@@ -268,12 +244,30 @@ angular.module('starter.controllers', [])
         // we would probably save a profile when we register new users on our site
         // we could also read the profile to see if it's null
         // here we will just simulate this with an isNewUser boolean
-        var isNewUser = true;
+        var isNewUser = false;
 
         var ref = new Firebase("https://swaltyapp.firebaseio.com");
+        
+
+
+
         ref.onAuth(function(authData) {
+          ref.once('value', function(snapshot) {
+          var test = getName(authData)
+          var test2 = authData.provider
+          
+          if (snapshot.hasChild(test)) {
+            console.log('test')
+            var isNewUser = true;
+          }else{
+            $state.go("homepage");
+            console.log('??')
+          }
+        });
             if (authData && isNewUser) {
                 var favoris = [0];
+                var titres = [0];
+                var titre = "Inscit"; 
                 // save the user's profile into the database so we can list users,
                 // use them in Security and Firebase Rules, and show profiles
                 ref.child("users").child(authData.uid).set({
@@ -281,7 +275,9 @@ angular.module('starter.controllers', [])
                     name: getName(authData),
                     fav: favoris,
                     sucre: 0,
-                    sel: 0
+                    sel: 0,
+                    titres: titres,
+                    titre: titre
                 });
                 $state.go("homepage");
 
@@ -316,11 +312,23 @@ angular.module('starter.controllers', [])
         // we would probably save a profile when we register new users on our site
         // we could also read the profile to see if it's null
         // here we will just simulate this with an isNewUser boolean
-        var isNewUser = true;
+        var isNewUser = false;
 
         var ref = new Firebase("https://swaltyapp.firebaseio.com");
+        
+
         ref.onAuth(function(authData) {
-            if (authData && isNewUser) {
+          ref.once('value', function(snapshot) {
+          var test = getName(authData)
+          
+          if (snapshot.hasChild(test)) {
+            console.log("nice")
+            var isNewUser = true;
+          }else{
+            console.log(getName(authData))
+          }
+        });
+            if (authData && isNewUser == true) {
                 var favoris = [0];
                 // save the user's profile into the database so we can list users,
                 // use them in Security and Firebase Rules, and show profiles
