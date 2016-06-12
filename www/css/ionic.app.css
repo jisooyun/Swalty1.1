@@ -10007,8 +10007,8 @@ a {
 .crepes-sel {
   background-image: url("../img/icon/crêpe-sel.png"); }
 
-.paques-sel {
-  background-image: url(""); }
+.event-sel {
+  background-image: url("../img/icon/event-sel.png"); }
 
 /* FIN IMAGES */
 /*---------------------------------------------------------
@@ -10029,8 +10029,8 @@ a {
 .crepes {
   background-image: url("../img/icon/crêpe.png"); }
 
-.paques {
-  background-image: url(""); }
+.event {
+  background-image: url("../img/icon/event-sucre.png"); }
 
 /* FIN IMAGES */
 .page, .page-ingre {
@@ -10401,6 +10401,12 @@ LISTE DES RECETTES SEL
     text-align: center; }
   .page-profil .item, .page-profil .item-input {
     height: 68px; }
+
+.boutonRetourProfil {
+  padding-top: 15px;
+  margin-left: 15px;
+  color: #909090 !important;
+  text-shadow: 0px 4px 7px rgba(0, 0, 0, 0.5) !important; }
 
 .profil-photo {
   padding-top: 30px;
