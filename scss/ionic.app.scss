@@ -282,10 +282,11 @@ a {
   background-image: url('../img/icon/crêpe-sel.png');
 
 }
-.paques-sel{
-  background-image: url('');
-
+.event-sel{
+  background-image: url('../img/icon/event-sel.png');
 }
+
+
 
 /* FIN IMAGES */
 
@@ -312,9 +313,8 @@ a {
   background-image: url('../img/icon/crêpe.png');
 
 }
-.paques{
-  background-image: url('');
-
+.event{
+  background-image: url('../img/icon/event-sucre.png');
 }
 
 /* FIN IMAGES */
@@ -451,6 +451,14 @@ a {
 
 }
 
+.bg-event-sel{
+  background-image: url('../img/event-sel.jpg');
+}
+
+.bg-event-sucre{
+  background-image: url('../img/event-sucre.jpg');
+
+}
 
 
 /* ---------------------------------------------------------
@@ -522,7 +530,7 @@ LISTE DES RECETTES SEL
 
 ---------------------------------------------------------*/
 .bg-ingre{
-  background-image: url('../img/bg-gaufre-sucre.jpg');
+  background-image: url('../img/bg2.jpg');
   background-size: cover;
   height: 25%;
 
@@ -809,6 +817,13 @@ LISTE DES RECETTES SEL
 
 }
 
+.boutonRetourProfil {
+  padding-top: 15px;
+  margin-left: 15px;
+  color: $grisclair !important;
+  text-shadow: $ombreTxt !important;
+}
+
 .profil-photo {
   padding-top: 30px;
   margin-left: auto;
@@ -856,7 +871,6 @@ LISTE DES RECETTES SEL
 //NAVBAR//
 
 
-
 .nav-icon {
   margin-top: 0;
   font-size: 35px;
@@ -869,4 +883,12 @@ LISTE DES RECETTES SEL
 
 .nav-icon a:focus{
   color: $rose;
+}
+
+
+.content-detail p{
+  text-align: justify;
+  white-space: normal !important;
+  line-height: 90% !important;
+  padding-top: 0 !important;
 }

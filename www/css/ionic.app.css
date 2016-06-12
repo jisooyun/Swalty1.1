@@ -10007,8 +10007,8 @@ a {
 .crepes-sel {
   background-image: url("../img/icon/crêpe-sel.png"); }
 
-.paques-sel {
-  background-image: url(""); }
+.event-sel {
+  background-image: url("../img/icon/event-sel.png"); }
 
 /* FIN IMAGES */
 /*---------------------------------------------------------
@@ -10029,8 +10029,8 @@ a {
 .crepes {
   background-image: url("../img/icon/crêpe.png"); }
 
-.paques {
-  background-image: url(""); }
+.event {
+  background-image: url("../img/icon/event-sucre.png"); }
 
 /* FIN IMAGES */
 .page, .page-ingre {
@@ -10125,6 +10125,12 @@ a {
 .bg-crepe-sel {
   background-image: url("../img/crepe-sale.jpg"); }
 
+.bg-event-sel {
+  background-image: url("../img/event-sel.jpg"); }
+
+.bg-event-sucre {
+  background-image: url("../img/event-sucre.jpg"); }
+
 /* ---------------------------------------------------------
 LISTE DES RECETTES SUCRE
  ---------------------------------------------------------*/
@@ -10177,7 +10183,7 @@ LISTE DES RECETTES SEL
 
 ---------------------------------------------------------*/
 .bg-ingre {
-  background-image: url("../img/bg-gaufre-sucre.jpg");
+  background-image: url("../img/bg2.jpg");
   background-size: cover;
   height: 25%; }
 
@@ -10402,6 +10408,12 @@ LISTE DES RECETTES SEL
   .page-profil .item, .page-profil .item-input {
     height: 68px; }
 
+.boutonRetourProfil {
+  padding-top: 15px;
+  margin-left: 15px;
+  color: #909090 !important;
+  text-shadow: 0px 4px 7px rgba(0, 0, 0, 0.5) !important; }
+
 .profil-photo {
   padding-top: 30px;
   margin-left: auto;
@@ -10448,3 +10460,9 @@ LISTE DES RECETTES SEL
 
 .nav-icon a:focus {
   color: #ff6b6b; }
+
+.content-detail p {
+  text-align: justify;
+  white-space: normal !important;
+  line-height: 90% !important;
+  padding-top: 0 !important; }

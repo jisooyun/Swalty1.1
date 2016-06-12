@@ -301,7 +301,8 @@ angular.module('starter.controllers', [])
 
 //PROFIL
 .controller("ProfilController", ["$scope", "Auth", "$state",
-    function($scope, Auth, $state, $ionicPopup, $timeout) {
+    function($scope, Auth) {
+
         $scope.auth = Auth;
 
         // any time auth status updates, add the user data to scope

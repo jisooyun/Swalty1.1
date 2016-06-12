@@ -3,8 +3,9 @@
 
         <div class="page-profil" ng-controller="ProfilController">
 
-            <div ng-show="authData">
+            <a ui-sref="homepage" class="boutonRetourProfil button icon-left ion-chevron-left button-clear button-ligth ion-ios-arrow-thin-left"></a>
 
+            <div ng-show="authData">
 
                 <img src="{{ authData.facebook.profileImageURL }}" class="profil-photo">
 
