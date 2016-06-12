@@ -99,9 +99,9 @@ angular.module('starter.controllers', [])
             updateFav.set(banane);
         }
       })
-      banane = updateFav.get();
-      userRef.update({
-             fav : banane
+            banane = updateFav.get();
+            userRef.update({
+            fav : banane
         });
 
     
@@ -214,8 +214,8 @@ angular.module('starter.controllers', [])
                     console.log("Error creating user:", error);
                 } else {
                   authProvider.set(1);
-                    $state.go("homepage");
-                  console.log(userData);
+                    
+                    console.log(userData);
                     console.log("Successfully created user account with uid:", userData.uid);
                     var favoris = [0];
                     var ref = new Firebase("https://swaltyapp.firebaseio.com");
@@ -226,6 +226,7 @@ angular.module('starter.controllers', [])
                     sucre: 0,
                     sel: 0
                 });
+                    $state.go("homepage");
                 }
             });
         }
@@ -237,24 +238,23 @@ angular.module('starter.controllers', [])
 
 
 //authConnexion
-.controller('ConnexionController', function($scope, $state) {
+.controller('ConnexionController', function($scope, $state, $firebaseAuth) {
 
     $scope.userConnexion = function() {
         var ref = new Firebase("https://swaltyapp.firebaseio.com");
 
         mail = this.mail;
         mdp = this.mdp;
-
-        ref.authWithPassword('AUTH_TOKEN', function(error, result) {
-            if (error) {
-                console.log("Authentication Failed!", error);
-                $state.go("homepage");
-            } else {
-                console.log("Authenticated successfully with payload:", result.auth);
-                console.log("Auth expires at:", new Date(result.expires * 1000));
-            }
-
-        })
+        ref.authWithPassword({
+        "email": this.mail,
+        "password": this.mdp
+}       , function(error, authData) {
+        if (error) {
+          console.log("Login Failed!", error);
+        } else {
+          console.log("Authenticated successfully with payload:", authData);
+        }
+      });
     }
 })
 
@@ -352,108 +352,3 @@ angular.module('starter.controllers', [])
     }
 
 ]);
-
-// //FAVORIS CONTROLLER
-// .controller('RecetteController', function($scope, Recettes, myService, updateFav){
-
-// $scope.single = myService.get();
-//   single = $scope.single;
-
-
-//   //Add Favoris dans Users
-//   var ref = new Firebase("https://swaltyapp.firebaseio.com/users");
-// // Attach an asynchronous callback to read the data at our posts reference
-//   ref.on("value", function(snapshot) {
-//     //Hide btn
-//     $scope.isFavoris = function(){
-//     var auth = ref.getAuth();
-//     var idUtilisateur = auth.uid;
-//     var usersRef = ref.child(idUtilisateur);
-//       var path = usersRef.toString();
-//       var userRef = new Firebase(path);
-//       userRef.on("value", function(snap){
-//         var id = single.$id;
-//         var tokenFavoris = 0
-//         var banane = snap.val().fav;
-//         for (var i = banane.length - 1; i >= 0; i--) {
-//                 if (banane[i] === id) {
-//                     tokenFavoris = 1
-//                 };
-//             }
-//         if (tokenFavoris == 1) {
-//             $scope.Favoris = {display : "none"}; 
-//       }else{
-//         $scope.delFavoris = {display : "none"}; 
-//       }
-//     });
-//   }
-
-//     $scope.isFav = function(){
-//         var auth = ref.getAuth();
-//       var idUtilisateur = auth.uid;
-
-//       var usersRef = ref.child(idUtilisateur);
-//       var path = usersRef.toString();
-//       console.log(ref)
-//       var userRef = new Firebase(path);
-//       userRef.on("value", function(snap){
-//         var id = single.$id;
-//         var tokenFav = 0
-//         var banane = snap.val().fav;
-//         for (var i = banane.length - 1; i >= 0; i--) {
-//                 if (banane[i] === id) {
-//                     tokenFav = 1
-//                 };
-//             }
-//         if (tokenFav != 1) {
-            
-//             banane.push(id);
-//             updateFav.set(banane);
-//         }else{
-//             banane = snap.val().fav;
-//             updateFav.set(banane);
-//         }
-//       })
-//       banane = updateFav.get();
-//       userRef.update({
-//              fav : banane
-//         });
-
-    
-        
-//         }
-//     });
-
-
-//   //Delete Favoris dans Users
-//   var ref = new Firebase("https://swaltyapp.firebaseio.com/users");
-// // Attach an asynchronous callback to read the data at our posts reference
-//   ref.on("value", function(snapshot) {
-//     $scope.delFav = function(){
-//         var auth = ref.getAuth();
-//         var idUtilisateur = auth.uid;
-//         var usersRef = ref.child(idUtilisateur);
-//         var path = usersRef.toString();
-//         var userRef = new Firebase(path);
-//         userRef.on("value", function(snap){
-//             var banane = snap.val().fav;
-//             var id = single.$id;
-//             for (var i = banane.length - 1; i >= 0; i--) {
-//                 if (banane[i] === id) {
-//                     banane.splice(i,1);
-//                 };
-//             }
-//             updateFav.set(banane);
-//         })
-//         banane = updateFav.get();
-//         userRef.update({
-//             fav : banane
-//         });
-
-    
-        
-//   }
-    
-
-//     });
-// });
