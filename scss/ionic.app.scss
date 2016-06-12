@@ -314,7 +314,7 @@ a {
 
 }
 .event{
-  background-image: url('../img/icon/event-sel.png');
+  background-image: url('../img/icon/event-sucre.png');
 }
 
 /* FIN IMAGES */
@@ -591,7 +591,7 @@ LISTE DES RECETTES SEL
 
 .content{
   text-align: center;
-  max-height: 280px !important;
+  max-height: 300px !important;
   overflow: auto;
   margin-bottom: 15px;
 }
@@ -602,11 +602,9 @@ LISTE DES RECETTES SEL
 }
 
 .content-detail p{
-  white-space: initial;
-  text-align: justify;
+  padding-top: 8%;
   word-wrap: break-word;
   font-size: 1.2em;
-  line-height: 100%;
 }
 
 .tool{
@@ -619,27 +617,23 @@ LISTE DES RECETTES SEL
 .start{
   text-align: center;
   border: 0.5px solid $rose;
-  color: $blanc;
-  background-color: $rose;
-  font-size: 20px;
-  padding : 3% 25% 3% 25%;
-  margin-left: 12%;
+  color: $grisclair;
+  font-size: 18px;
+  padding : 2% 20% 2% 20%;
+  margin-left: 18%;
   border-radius: 10px;
-  margin-bottom: 5px !important;
 }
 
 .page-ingre-sel .start {
-  background-color: $vert;
   border: 0.5px solid $vert;
-  color: $marron !important;
 }
 
 /* PAGE ETAPES */
 
 .content-etape{
-  max-height: 330px !important;
+  max-height: 360px !important;
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .content-etape p {
@@ -651,7 +645,7 @@ LISTE DES RECETTES SEL
 
 .page-etape{
   .start{
-    margin-left: 16% !important;
+    margin-left: 25% !important;
   }
 }
 
@@ -898,4 +892,20 @@ LISTE DES RECETTES SEL
 .taille{
   width :20%;
   padding-left: 7%;
+}
+
+.nav-sucre{
+  color:$rose;
+}
+
+.nav-sel{
+  color:$vert;
+}
+
+
+.content-detail p{
+  text-align: justify;
+  white-space: normal !important;
+  line-height: 90% !important;
+  padding-top: 0 !important;
 }
