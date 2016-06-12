@@ -1,4 +1,4 @@
-<ion-view view-title="Event | Sucré">
+<ion-view view-title="Event | Salé">
 
     <ion-content>
         <section class="page">
@@ -10,8 +10,8 @@
                 <h1 class="text-center"> EVENEMENT </h1>
             </div>
 
-        <ion-list scroll="true" ng-controller="RecetteController">
-            <ion-item ng-repeat="recette in recettes" ng-if="recette.categRecette == 'event' && recette.typeRecette == 'sucre'">
+        <ion-list scroll="true" ng-controller="RecetteController" ng-if="recette.categRecette == 'event' && recette.typeRecette == 'sel'">
+            <ion-item ng-repeat="recette in recettes">
                 <a class="item item-thumbnail-left" href="#">
                     <img src="img/perry.png">
                     <h2>{{recette.titre}}</h2>

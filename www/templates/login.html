@@ -1,12 +1,28 @@
 <ion-view view-title="Connexion">
     <ion-content scroll="false">
 
-        <div ng-controller="AuthController" class="page_register">
+        <div ng-controller="ConnexionController" class="page_register">
 
             <img src="../img/logo_swalty.png" class="img-responsive logo_app">
 
             <h1> SWALTY </h1>
 
+            <form ng-submit="userConnexion()">
+
+                <div class="list form_register">
+                    <label class="item item-input">
+                        <input type="email" ng-model="mail" placeholder="Mail">
+                    </label>
+                    <label class="item item-input">
+                        <input type="password" ng-model="mdp" placeholder="Votre mot de passe">
+                    </label>
+                </div>
+
+                <button class="btn_register button button-small button-assertive" type="submit">
+                    JE ME CONNECTE
+                </button>
+
+            </form>
 
         </div>
 

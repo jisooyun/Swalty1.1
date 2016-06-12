@@ -123,6 +123,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           templateUrl: 'templates/categSucre/event-sucre.html'
       })
 
+      .state('event-sel', {
+          url: '/event-sel',
+          templateUrl: 'templates/categSel/event-sel.html'
+      })
+
       ////// DETAIL PAGES 
 
       .state('sucre-detail', {

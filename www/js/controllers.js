@@ -39,10 +39,10 @@ angular.module('starter.controllers', [])
 
     $scope.backView = function(){
         $ionicViewService.getBackView().go();
-    };
+    }
 
     $scope.single = myService.get();
-    single = $scope.single;
+  single = $scope.single;
 
 
   //Add Favoris dans Users
@@ -195,7 +195,7 @@ angular.module('starter.controllers', [])
 
 
 //authInscription
-.controller('AuthController', function($scope, authProvider, $location) {
+.controller('AuthController', function($scope, authProvider, $state) {
 
     $scope.addUser = function() {
         var ref = new Firebase("https://swaltyapp.firebaseio.com");
@@ -214,7 +214,7 @@ angular.module('starter.controllers', [])
                     console.log("Error creating user:", error);
                 } else {
                   authProvider.set(1);
-                  $location.path("/homepage");
+                    $state.go("homepage");
                   console.log(userData);
                     console.log("Successfully created user account with uid:", userData.uid);
                     var favoris = [0];
@@ -237,17 +237,18 @@ angular.module('starter.controllers', [])
 
 
 //authConnexion
-.controller('ConnexionController', function($scope) {
+.controller('ConnexionController', function($scope, $state) {
 
     $scope.userConnexion = function() {
         var ref = new Firebase("https://swaltyapp.firebaseio.com");
 
-        pseudo = this.pseudo;
+        mail = this.mail;
         mdp = this.mdp;
 
-        ref.auth("AUTH_TOKEN", function(error, result) {
+        ref.authWithPassword('AUTH_TOKEN', function(error, result) {
             if (error) {
                 console.log("Authentication Failed!", error);
+                $state.go("homepage");
             } else {
                 console.log("Authenticated successfully with payload:", result.auth);
                 console.log("Auth expires at:", new Date(result.expires * 1000));
@@ -260,13 +261,12 @@ angular.module('starter.controllers', [])
 
 //SE CONNECTER VIA FACEBOOK
 .controller("UserController", ["$scope", "Auth", "$state",
-    function($scope, Auth, $state) {
+    function($scope, Auth, $state, $ionicPopup, $timeout) {
         $scope.auth = Auth;
 
         // any time auth status updates, add the user data to scope
         $scope.auth.$onAuth(function(authData) {
             $scope.authData = authData;
-            
         });
 
         // we would probably save a profile when we register new users on our site
@@ -288,6 +288,7 @@ angular.module('starter.controllers', [])
                     sel: 0
                 });
                 $state.go("homepage");
+
             }
         });
 
@@ -304,7 +305,7 @@ angular.module('starter.controllers', [])
         }
     }
 
-])
+]);
 
 // //FAVORIS CONTROLLER
 // .controller('RecetteController', function($scope, Recettes, myService, updateFav){
