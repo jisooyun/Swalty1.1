@@ -31,7 +31,7 @@ angular.module('starter.controllers', [])
 })
 
 //AFFICHER LES RECETTES SINGLE
-.controller('SingleController', function($scope, Recettes, $ionicViewService,  myService, updateFav){
+.controller('SingleController', function($scope, Recettes, $ionicViewService,  myService, updateFav, Scores, ScoresTotal){
 
   $scope.single = myService.get();
   $scope.ingredients = single.ingredient;
@@ -80,11 +80,11 @@ angular.module('starter.controllers', [])
 
       var usersRef = ref.child(idUtilisateur);
       var path = usersRef.toString();
-      console.log(ref);
       var userRef = new Firebase(path);
       userRef.on("value", function(snap){
         var id = single.$id;
         var tokenFav = 0;
+        console.log(snap.val().fav)
         var banane = snap.val().fav;
         for (var i = banane.length - 1; i >= 0; i--) {
                 if (banane[i] === id) {
@@ -138,6 +138,72 @@ angular.module('starter.controllers', [])
 
     });
 
+   //Add point
+  var ref = new Firebase("https://swaltyapp.firebaseio.com/users");
+  var ref2 = new Firebase("https://swaltyapp.firebaseio.com/scores");
+  var ref3 = new Firebase("https://swaltyapp.firebaseio.com/titres");
+// Attach an asynchronous callback to read the data at our posts reference
+  ref.on("value", function(snapshot) {
+    $scope.pointSucree = function(){
+        var auth = ref.getAuth();
+        var idUtilisateur = auth.uid;
+        var usersRef = ref.child(idUtilisateur);
+        var path = usersRef.toString();
+        var userRef = new Firebase(path);
+        userRef.on("value", function(snap){
+            var score = snap.val().sucre;
+            var scores = score + 1;
+            Scores.set(scores);
+        })
+        ref2.on("value", function(sna){
+          var snaperlipopette = sna.val().sucre
+          snaperlipopetteNew = snaperlipopette + 1
+          ScoresTotal.set(snaperlipopetteNew);
+        })
+
+        scores = Scores.get();
+        userRef.update({
+            sucre : scores
+        
+        });
+        NewSna = ScoresTotal.get()
+        ref2.update({sucre:NewSna});
+      }
+    });
+  ref.on("value", function(snapshot) {
+    $scope.pointSel = function(){
+        var auth = ref.getAuth();
+        var idUtilisateur = auth.uid;
+        var usersRef = ref.child(idUtilisateur);
+        var path = usersRef.toString();
+        var userRef = new Firebase(path);
+        userRef.on("value", function(snap){
+            var score = snap.val().sel;
+            var scores = score + 1;
+            Scores.set(scores);
+        })
+        ref2.on("value", function(sna){
+          var snaperlipopetteSel = sna.val().sel
+          snaperlipopetteNewnew = snaperlipopetteSel + 1
+          ScoresTotal.set(snaperlipopetteNewnew);
+        })
+        
+        scores = Scores.get();
+
+        ref3.on("value", function(sn){
+          var snaperlipopetteTitre = sn.val()
+          console.log(snaperlipopetteTitre);
+        })
+
+        userRef.update({
+            sel : scores
+        
+        });
+        NewSnaSel = ScoresTotal.get()
+        ref2.update({sel:NewSnaSel});
+      }
+    });
+
 })
 
 
@@ -149,6 +215,8 @@ angular.module('starter.controllers', [])
         $scope.recette = snapshot.val();
         console.log("id: " + prevChildKey);
     });
+
+   
 })
 
 //AFFICHER LES TITRES

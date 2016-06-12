@@ -90,6 +90,34 @@ angular.module('starter.services', ['firebase'])
     }
 ])
 
+.factory("Scores", function(){
+  var score = 0;
+  function set(data){
+    score = data;
+  }
+  function get(){
+    return score;
+  }
+  return{
+    set:set,
+    get:get
+  }
+})
+
+.factory("ScoresTotal", function(){
+  var scores = 0;
+  function set(data){
+    scores = data;
+  }
+  function get(){
+    return scores;
+  }
+  return{
+    set:set,
+    get:get
+  }
+})
+
 
 //Gestion des routes
 .factory('authProvider', function() {
