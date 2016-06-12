@@ -10439,3 +10439,12 @@ LISTE DES RECETTES SEL
 .form-profil {
   padding-top: 30px;
   width: 100% !important; }
+
+.nav-icon {
+  margin-top: 0;
+  font-size: 35px;
+  padding: 0% 40% 0% 40%;
+  color: #909090; }
+
+.nav-icon a:focus {
+  color: #ff6b6b; }

@@ -5,7 +5,8 @@
             <!-- DIV SUCRE -->
 
             <div class="bg-empty">
-                <a class="boutonRetour button icon-left ion-chevron-left button-clear button-ligth ion-ios-arrow-thin-left" ui-sref="homepage">
+                <a class="boutonRetour button icon-left ion-chevron-left button-clear button-ligth ion-ios-arrow-thin-left"
+                   nav-direction="back" ui-sref="homepage">
                 </a>
                 <h1 class="text-center">sucré</h1>
             </div>
@@ -66,31 +67,8 @@
 
         </section>
 
-        <!--<ion-tabs class="tabs-icon-top tabs-color-active-positive" ng-controller="TabsCtrl">-->
+        <div ng-include src="'templates/nav.html'"></div>
 
-            <!--&lt;!&ndash; Dashboard Tab &ndash;&gt;-->
-            <!--<ion-tab title="Home" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" ui-sref="homepage">-->
-                <!--<ion-nav-view name="homepage"></ion-nav-view>-->
-            <!--</ion-tab>-->
-
-
-            <!--&lt;!&ndash; Sel Tab &ndash;&gt;-->
-            <!--<ion-tab title="Sel" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" ui-sref="sel">-->
-                <!--<ion-nav-view name="sel"></ion-nav-view>-->
-            <!--</ion-tab>-->
-
-            <!--&lt;!&ndash;&lt;!&ndash; Chats Tab &ndash;&gt;&ndash;&gt;-->
-            <!--&lt;!&ndash;<ion-tab title="Chats" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/chats">&ndash;&gt;-->
-            <!--&lt;!&ndash;<ion-nav-view name="tab-chats"></ion-nav-view>&ndash;&gt;-->
-            <!--&lt;!&ndash;</ion-tab>&ndash;&gt;-->
-
-            <!--&lt;!&ndash; Account Tab &ndash;&gt;-->
-            <!--<ion-tab title="Account" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" ui-sref="tab.account">-->
-                <!--<ion-nav-view name="tab-account"></ion-nav-view>-->
-            <!--</ion-tab>-->
-
-
-        <!--</ion-tabs>-->
 
 
     </ion-content>

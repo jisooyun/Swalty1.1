@@ -850,3 +850,23 @@ LISTE DES RECETTES SEL
   padding-top: 30px;
   width: 100% !important;
 }
+
+
+
+//NAVBAR//
+
+
+
+.nav-icon {
+  margin-top: 0;
+  font-size: 35px;
+  padding: 0% 40% 0% 40%;
+  color: $grisclair;
+
+}
+
+
+
+.nav-icon a:focus{
+  color: $rose;
+}
