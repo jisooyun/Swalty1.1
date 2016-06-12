@@ -10461,11 +10461,11 @@ LISTE DES RECETTES SEL
 .nav-icon {
   margin-top: 0;
   font-size: 35px;
-  padding: 0% 40% 0% 40%;
   color: #909090; }
 
-.nav-icon a:focus {
-  color: #ff6b6b; }
+.taille {
+  width: 20%;
+  padding-left: 7%; }
 
 .content-detail p {
   text-align: justify;
