@@ -10487,3 +10487,31 @@ LISTE DES RECETTES SEL
 
 .nav-sel {
   color: #c7f464; }
+
+.popup {
+  border-radius: 30px !important;
+  height: 50% !important; }
+  .popup .button {
+    background-color: #c7f464;
+    color: #675959; }
+
+.popup-buttons {
+  background-color: #c7f464;
+  color: #675959;
+  position: absolute !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  border-radius: 30px !important; }
+
+.popup-title {
+  font-size: 2em; }
+
+.popup-body {
+  width: 100%;
+  font-size: 1.5em;
+  text-align: center;
+  font-family: "Champagne & Limousines"; }
+
+.confetti {
+  margin-bottom: 30px;
+  width: 50px !important; }

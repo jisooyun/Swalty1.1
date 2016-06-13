@@ -923,3 +923,39 @@ LISTE DES RECETTES SEL
 
 
 
+//IONIC POPUP //
+
+.popup {
+  border-radius: 30px !important;
+  height: 50% !important;
+
+  .button {
+    background-color: $vert;
+    color: $marron;
+  }
+}
+
+.popup-buttons {
+  background-color: $vert;
+  color: $marron;
+  position: absolute !important;
+  bottom: 0 !important;
+  width:100% !important;
+  border-radius:30px !important;
+}
+
+.popup-title {
+  font-size: 2em;
+}
+
+.popup-body {
+  width: 100%;
+  font-size: 1.5em;
+  text-align: center;
+  font-family: "Champagne & Limousines";
+}
+
+.confetti {
+  margin-bottom: 30px;
+  width: 50px !important;
+}

@@ -32,7 +32,7 @@ angular.module('starter.controllers', [])
 })
 
 //AFFICHER LES RECETTES SINGLE
-.controller('SingleController', function($scope, Recettes, $ionicViewService,  myService, updateFav, Scores, ScoresTotal, titreJoueur){
+.controller('SingleController', function($scope, Recettes, $ionicViewService,  myService, updateFav, Scores, ScoresTotal, titreJoueur, $ionicPopup, $state){
 
   $scope.single = myService.get();
   $scope.ingredients = single.ingredient;
@@ -183,6 +183,7 @@ angular.module('starter.controllers', [])
         NewSna = ScoresTotal.get()
         console.log(NewSna)
         ref2.update({sucre:NewSna});
+
       }
     });
   ref.on("value", function(snapshot) {
@@ -192,6 +193,7 @@ angular.module('starter.controllers', [])
         var usersRef = ref.child(idUtilisateur);
         var path = usersRef.toString();
         var userRef = new Firebase(path);
+
         userRef.on("value", function(snap){
             var score = snap.val().sel;
             var scores = score + 1;
@@ -209,8 +211,8 @@ angular.module('starter.controllers', [])
               usersRef.update({titre:titre})
             };
           })
-          
         })
+
         scores = Scores.get();
         userRef.update({
             sel : scores
@@ -224,9 +226,24 @@ angular.module('starter.controllers', [])
         var NewSnaSel = ScoresTotal.get()
         console.log(NewSnaSel)
         ref2.update({sel:NewSnaSel});
+
       }
 
     });
+
+
+    // BOITE D'ALERTE QUI ANNONCE LE TITRE DU JOUEUR !
+    $scope.showAlert = function() {
+        var alertPopup = $ionicPopup.alert({
+            title: 'FELICITATIONS',
+            template: '<img src="img/icon/confetti.png" class="confetti"> <br>' +
+            'Vous êtes à présent '
+        });
+        alertPopup.then(function(res) {
+            console.log('test', res);
+            $state.go("homepage");
+        });
+    };
 
 })
 
