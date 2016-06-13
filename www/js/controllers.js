@@ -274,7 +274,7 @@ angular.module('starter.controllers', [])
 .controller('FavorisController', function($scope, Titres, favorisSingle){
     var ref = new Firebase("https://swaltyapp.firebaseio.com/users");
 
-        ref.on("value", function(snap){
+    ref.on("value", function(snap){
           var auth = ref.getAuth();
           var idUtilisateur = auth.uid;
           var usersRef = ref.child(idUtilisateur);
@@ -301,6 +301,8 @@ angular.module('starter.controllers', [])
           })
         });
     $scope.titres = Titres;
+
+
 })
 
 //authInscription
