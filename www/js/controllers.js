@@ -170,6 +170,7 @@ angular.module('starter.controllers', [])
               titre = childSnapshot.val().nom
               titreJoueur.set(titre)
               usersRef.update({titre:titre})
+              showAlert();
             };
           })
           
@@ -209,7 +210,8 @@ angular.module('starter.controllers', [])
               titre = childSnapshot.val().nom
               titreJoueur.set(titre)
               usersRef.update({titre:titre})
-            };
+              showAlert();
+            }; 
           })
         })
 
@@ -229,20 +231,31 @@ angular.module('starter.controllers', [])
 
       }
 
+
     });
 
 
     // BOITE D'ALERTE QUI ANNONCE LE TITRE DU JOUEUR !
-    $scope.showAlert = function() {
-        var alertPopup = $ionicPopup.alert({
+    showAlert = function() {
+        var auth = ref.getAuth();
+        var idUtilisateur = auth.uid;
+        var usersRef = ref.child(idUtilisateur);
+        var path = usersRef.toString();
+        var userRef = new Firebase(path);
+        userRef.on("value", function(snap){
+            var titre = snap.val().titre;
+            console.log(titre)
+            var alertPopup = $ionicPopup.alert({
             title: 'FELICITATIONS',
             template: '<img src="img/icon/confetti.png" class="confetti"> <br>' +
-            'Vous êtes à présent '
+            'Vous êtes à présent : '+titre+''
         });
         alertPopup.then(function(res) {
             console.log('test', res);
             $state.go("homepage");
         });
+        })
+        
     };
 
 })
