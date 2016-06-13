@@ -42,6 +42,8 @@
                 <ion-item class="item-sel-fav" ng-repeat="favori in favorits" ng-if="favori.typeRecette == 'sel'">
                     <a ui-sref="sel-detail" ng-click="single(single)">
                        <h2>{{favori.titre}}</h2>
+
+                       <button type="submit" ng-click="delFav(favori)" class="button-light button-clear ion-ios-heart pull-right" ng-style="delFavoris"></button>
                     </a>
                 </div>
                 </ion-item>

@@ -23,11 +23,11 @@ angular.module('starter.controllers', [])
 //AFFICHER LES RECETTES
 .controller('RecetteController', function($scope, Recettes,$state, myService){
    $scope.recettes = Recettes;
-   console.log(Recettes)
 
    $scope.single = function(){
       single = this.recette;
       myService.set(single);
+      console.log(single)
   } 
 })
 
@@ -46,6 +46,7 @@ angular.module('starter.controllers', [])
     $scope.ingredients = single.ingredient;
     console.log(single)
     $scope.etapes = single.etape;
+    console.log(single.$id)
 
 
   //Add Favoris dans Users
@@ -86,6 +87,7 @@ angular.module('starter.controllers', [])
       var userRef = new Firebase(path);
       userRef.on("value", function(snap){
         var id = single.$id;
+        console.log(id)
         var tokenFav = 0;
         console.log(snap.val().fav)
         var banane = snap.val().fav;
@@ -284,8 +286,13 @@ angular.module('starter.controllers', [])
 })
 
 // FAVORIS
-.controller('FavorisController', function($scope, Titres, favorisSingle, myService){
+.controller('FavorisController', function($scope, Titres, favorisSingle, myService, updateFav){
     var ref = new Firebase("https://swaltyapp.firebaseio.com/users");
+ $scope.single = function(){
+      single = this.favori;
+      myService.set(single);
+      console.log(single)
+  };
 
     ref.on("value", function(snap){
           var auth = ref.getAuth();
@@ -296,7 +303,6 @@ angular.module('starter.controllers', [])
           userRef.on("value", function(snapshot){
             var tadam = snapshot.val().fav;
             favorisSingle.set(tadam);
-            
             var ref2 = new Firebase("https://swaltyapp.firebaseio.com/recettes");
             ref2.on("value", function(sn){
               var fav = sn.val();
@@ -314,15 +320,13 @@ angular.module('starter.controllers', [])
           })
         });
     $scope.titres = Titres;
-    $scope.single = function(){
-      single = this.favori;
-      console.log(single)
-      myService.set(single);
-  };
+   
 
 // Attach an asynchronous callback to read the data at our posts reference
     ref.on("value", function(snapshot) {
-        $scope.delFav = function(){
+        $scope.delFav = function(fav){
+          single = this.favori;
+          myService.set(single);
             var auth = ref.getAuth();
             var idUtilisateur = auth.uid;
             var usersRef = ref.child(idUtilisateur);
@@ -330,13 +334,27 @@ angular.module('starter.controllers', [])
             var userRef = new Firebase(path);
             userRef.on("value", function(snap){
                 var banane = snap.val().fav;
-                var id = single.$id;
-                for (var i = banane.length - 1; i >= 0; i--) {
-                    if (banane[i] === id) {
-                        banane.splice(i,1);
+                single = myService.get()
+
+                var ref2 = new Firebase("https://swaltyapp.firebaseio.com/recettes");
+                ref2.on("value", function(snip){
+                  single = myService.get()
+                  maybe = single.titre
+                  
+                    for (var i = banane.length - 1; i >= 1; i--) {
+                      if (snip.hasChild(banane[i])) {
+                        var objRef = ref2.child(banane[i]);
+                        var path2 = objRef.toString();
+                        var objRef = new Firebase(path2);
+                        objRef.on("value", function(snipshot) {
+                          if (snipshot.val().titre == single.titre ) {
+                            banane.splice(i,1)
+                            updateFav.set(banane)
+                          };
+                        })
+                      }; 
                     };
-                }
-                updateFav.set(banane);
+                })
             })
             banane = updateFav.get();
             userRef.update({
