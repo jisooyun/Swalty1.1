@@ -35,15 +35,17 @@ angular.module('starter.controllers', [])
 .controller('SingleController', function($scope, Recettes, $ionicViewService,  myService, updateFav, Scores, ScoresTotal, titreJoueur, $ionicPopup, $state){
 
   $scope.single = myService.get();
-  $scope.ingredients = single.ingredient;
-  $scope.etapes = single.etape;
+  
 
     $scope.backView = function(){
         $ionicViewService.getBackView().go();
     };
 
     $scope.single = myService.get();
-    single = $scope.single;
+    var single = $scope.single;
+    $scope.ingredients = single.ingredient;
+    console.log(single)
+    $scope.etapes = single.etape;
 
 
   //Add Favoris dans Users
@@ -284,7 +286,7 @@ angular.module('starter.controllers', [])
 })
 
 // FAVORIS
-.controller('FavorisController', function($scope, Titres, favorisSingle){
+.controller('FavorisController', function($scope, Titres, favorisSingle, myService){
     var ref = new Firebase("https://swaltyapp.firebaseio.com/users");
 
     ref.on("value", function(snap){
@@ -314,6 +316,11 @@ angular.module('starter.controllers', [])
           })
         });
     $scope.titres = Titres;
+    $scope.single = function(){
+      single = this.favori;
+      console.log(single)
+      myService.set(single);
+  } 
 
 
 })
