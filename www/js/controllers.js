@@ -250,14 +250,14 @@ angular.module('starter.controllers', [])
             var alertPopup = $ionicPopup.alert({
             title: 'FELICITATIONS',
             template: '<img src="img/icon/confetti.png" class="confetti"> <br>' +
-            'Vous êtes à présent : '+titre+''
+                '+1 POINT ! <br>'+
+            'Vous êtes à présent : <br> '+titre+''
         });
         alertPopup.then(function(res) {
             console.log('test', res);
-            $state.go("homepage");
         });
-        })
-        
+        });
+        $state.go("homepage");
     };
 
 })

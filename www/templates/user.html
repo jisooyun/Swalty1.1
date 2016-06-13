@@ -10,18 +10,18 @@
                 <img ng-if="auth" src="{{ authData.facebook.profileImageURL }}" class="profil-photo">
 
                 <h1> {{ authData.facebook.displayName }} </h1>
-                <h2> titre du user </h2>
+                <h2 ng-controller="FavorisController">  {{titre}}</h2>
 
                 <div class="list form-profil">
-                    <label class="item item-input" ui-sref="profil-titre">
-                        <p> MES TITRES  </p>
-                    </label>
+                    <!--<label class="item item-input" ui-sref="profil-titre">-->
+                        <!--<p> MES TITRES  </p>-->
+                    <!--</label>-->
                     <a ui-sref="favoris"><label class="item item-input">
                         <p> MES FAVORIS </p>
                     </label></a>
-                    <label class="item item-input">
-                        <p> PARAMETRES DE NOTIFICATIONS </p>
-                    </label>
+                    <!--<label class="item item-input">-->
+                        <!--<p> PARAMETRES DE NOTIFICATIONS </p>-->
+                    <!--</label>-->
                 </div>
 
                 <!--<button class="btn-note" ng-click="auth.$unauth()"> Noter l'application </button>-->
