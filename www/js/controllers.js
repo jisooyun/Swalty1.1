@@ -246,14 +246,14 @@ angular.module('starter.controllers', [])
         var userRef = new Firebase(path);
         userRef.on("value", function(snap){
             var titre = snap.val().titre;
-            console.log(titre)
+            console.log(titre);
             var alertPopup = $ionicPopup.alert({
             title: 'FELICITATIONS',
             template: '<img src="img/icon/confetti.png" class="confetti"> <br>' +
                 '+1 POINT ! <br>'+
             'Vous êtes à présent : <br> '+titre+'',
                 buttons: [
-                    { text: 'Accepter mon destin.',
+                    { text: 'J\'accepte mon destin.',
                     type: 'button' }
                 ]
         });
