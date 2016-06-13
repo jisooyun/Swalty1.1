@@ -1,10 +1,41 @@
-<ion-view view-title="Ingredients" ng-controller="FavorisController"><!--creation d'une vue-->
-    <ion-content scroll="false"><!-- permet de rendre la  vue non scrollable-->
-        Mes Favoris
+<ion-view view-title="Favoris" ng-controller="FavorisController"><!--creation d'une vue-->
+    <ion-content scroll="true"><!-- permet de rendre la  vue non scrollable-->
+        <!--Mes Favoris-->
 
-        <ion-item ng-repeat="favori in favorits">
-        {{favori.titre}}
-        </ion-item>
+        <!--<ion-item ng-repeat="favori in favorits">-->
+         <!--{{favori.titre}}-->
+        <!--</ion-item>-->
 
+
+
+        <section class="page">
+
+            <div class="bg-list bg-fav">
+                <a class="boutonRetour button icon-left ion-chevron-left button-clear button-ligth ion-ios-arrow-thin-left"
+                   ui-sref="sucre">
+                </a>
+                <h1 class="text-center"> MES FAVORIS </h1>
+            </div>
+
+
+            <!--LISTE DES RECETTES -->
+
+
+            <ion-list ng-controller="RecetteController">
+                <ion-item ng-repeat="favori in favorits">
+                    <a ui-sref="sucre-detail" ng-click="single(single)">
+
+                       <h2>{{favori.titre}}</h2>
+                    </a>
+                </ion-item>
+            </ion-list>
+
+
+
+
+
+        </section>
+
+        <div ng-include src="'templates/nav.html'"></div>
     </ion-content>
 </ion-view>
