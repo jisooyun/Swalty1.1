@@ -12,7 +12,7 @@
 
 
 
-        <section class="page">
+        <section class="pagefav">
 
             <div class="bg-list bg-fav">
                 <a class="boutonRetour button icon-left ion-chevron-left button-clear button-ligth ion-ios-arrow-thin-left"
@@ -27,30 +27,42 @@
 
             <ion-list>
                 <ion-item ng-repeat="favori in favorits" ng-if="favori.typeRecette != 'sel'">
-                    <a ui-sref="sucre-detail" ng-click="single(single)">
-                       <h2>{{favori.titre}}</h2>
+
+                    <a class="item item-thumbnail-left" ui-sref="sucre-detail" ng-click="single(single)">
+                        <img src="img/gaufre-sucre.jpg">
+                        <h2>{{favori.titre}}</h2>
+                        <p>Durée : {{favori.temps}} minutes</p>
+                        <p> Pour  : {{favori.nbPersonne}} personnes</p>
+                        <p>Difficulté : {{favori.difficulte}}</p>
                     </a>
 
-                    <button type="submit" ng-click="delFav(favori)" class="button-light button-clear ion-ios-heart pull-right" ng-style="delFavoris"></button>
+                    <button type="submit" ng-click="delFav(favori)" class="button-light button-clear ion-ios-heart">Supprimer des favoris</button>
 
                     <br>
 
-                    </div>
                 </ion-item>
             </ion-list>
             <ion-list>
                 <ion-item class="item-sel-fav" ng-repeat="favori in favorits" ng-if="favori.typeRecette == 'sel'">
-                    <a ui-sref="sel-detail" ng-click="single(single)">
-                       <h2>{{favori.titre}}</h2>
 
-                       <button type="submit" ng-click="delFav(favori)" class="button-light button-clear ion-ios-heart pull-right" ng-style="delFavoris"></button>
-                    </a>
-                </div>
+
+                        <a class="item item-thumbnail-left item-sel" ui-sref="sel-detail" ng-click="single(single)">
+                            <img src="img/crepe-sale.jpg">
+                            <h2>{{favori.titre}}</h2>
+                            <p>Durée : {{favori.temps}} minutes</p>
+                            <p> Pour  : {{favori.nbPersonne}} personnes</p>
+                            <p>Difficulté : {{favori.difficulte}}</p>
+                        </a>
+
+                        <button type="submit" ng-click="delFav(favori)" class="button-light button-clear ion-ios-heart">Supprimer des favoris</button>
+
+                    <br>
                 </ion-item>
             </ion-list>
 
         </section>
 
-        <div ng-include src="'templates/nav.html'"></div>
     </ion-content>
+    <div ng-include src="'templates/nav.html'"></div>
+
 </ion-view>

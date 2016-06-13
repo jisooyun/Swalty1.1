@@ -10519,3 +10519,12 @@ LISTE DES RECETTES SEL
 .confetti {
   margin-bottom: 30px;
   width: 50px !important; }
+
+.pagefav .button-clear.button-clear {
+  font-size: 1em;
+  padding-right: 10px;
+  padding-left: 10px; }
+
+.ion-ios-heart {
+  position: absolute;
+  right: 10px; }

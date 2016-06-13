@@ -483,7 +483,6 @@ LISTE DES RECETTES SUCRE
 .ion-ios-heart-outline{
   font-size: 30px;
   margin-top: 8%;
-
 }
 
 .item img{
@@ -962,4 +961,19 @@ LISTE DES RECETTES SEL
 .confetti {
   margin-bottom: 30px;
   width: 50px !important;
+}
+
+// PAGE FAVORIS //
+
+.pagefav {
+  .button-clear.button-clear {
+    font-size: 1em;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+.ion-ios-heart {
+    position: absolute;
+    right: 10px;
 }
