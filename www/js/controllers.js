@@ -249,7 +249,11 @@ angular.module('starter.controllers', [])
             title: 'FELICITATIONS',
             template: '<img src="img/icon/confetti.png" class="confetti"> <br>' +
                 '+1 POINT ! <br>'+
-            'Vous êtes à présent : <br> '+titre+''
+            'Vous êtes à présent : <br> '+titre+'',
+                buttons: [
+                    { text: 'Accepter mon destin.',
+                    type: 'button' }
+                ]
         });
         alertPopup.then(function(res) {
             console.log('test', res);

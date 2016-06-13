@@ -10492,12 +10492,14 @@ LISTE DES RECETTES SEL
 
 .popup {
   border-radius: 30px !important;
-  height: 50% !important; }
+  height: auto !important; }
   .popup .button {
     background-color: #c7f464;
-    color: #675959; }
+    color: #675959;
+    bottom: 0 !important; }
 
 .popup-buttons {
+  margin-top: 10%;
   background-color: #c7f464;
   color: #675959;
   position: relative !important;

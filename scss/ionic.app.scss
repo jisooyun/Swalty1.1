@@ -928,15 +928,18 @@ LISTE DES RECETTES SEL
 
 .popup {
   border-radius: 30px !important;
-  height: 50% !important;
+  height: auto !important;
+
 
   .button {
     background-color: $vert;
     color: $marron;
+    bottom: 0 !important;
   }
 }
 
 .popup-buttons {
+  margin-top: 10%;
   background-color: $vert;
   color: $marron;
   position: relative !important;
