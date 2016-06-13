@@ -10235,9 +10235,9 @@ LISTE DES RECETTES SEL
 
 .content {
   text-align: center;
-  max-height: 280px !important;
+  max-height: 330px !important;
   overflow: auto;
-  margin-bottom: 15px; }
+  margin-bottom: 30px; }
 
 .content-detail {
   text-align: center;
@@ -10263,7 +10263,6 @@ LISTE DES RECETTES SEL
   background-color: #ff6b6b;
   font-size: 20px;
   padding: 3% 25% 3% 25%;
-  margin-left: 12%;
   border-radius: 10px;
   margin-bottom: 5px !important; }
 
@@ -10272,20 +10271,20 @@ LISTE DES RECETTES SEL
   border: 0.5px solid #c7f464;
   color: #675959 !important; }
 
+.page-ingre-sel h2 {
+  background-color: #c7f464;
+  color: #675959; }
+
 /* PAGE ETAPES */
 .content-etape {
-  max-height: 330px !important;
-  text-align: center;
-  margin-bottom: 25px; }
+  max-height: 400px !important;
+  text-align: center; }
 
 .content-etape p {
   text-align: justify;
   padding-top: 0 !important;
   white-space: normal !important;
   line-height: 90% !important; }
-
-.page-etape .start {
-  margin-left: 16% !important; }
 
 /* TABS */
 .tabs-color-active-positive .tab-item.tab-item-active,
@@ -10493,15 +10492,17 @@ LISTE DES RECETTES SEL
 
 .popup {
   border-radius: 30px !important;
-  height: 50% !important; }
+  height: auto !important; }
   .popup .button {
     background-color: #c7f464;
-    color: #675959; }
+    color: #675959;
+    bottom: 0 !important; }
 
 .popup-buttons {
+  margin-top: 10%;
   background-color: #c7f464;
   color: #675959;
-  position: absolute !important;
+  position: relative !important;
   bottom: 0 !important;
   width: 100% !important;
   border-radius: 30px !important; }
@@ -10513,7 +10514,7 @@ LISTE DES RECETTES SEL
   width: 100%;
   font-size: 1.5em;
   text-align: center;
-  font-family: "Champagne & Limousines"; }
+  font-family: 'champagne__limousinesregular'; }
 
 .confetti {
   margin-bottom: 30px;
