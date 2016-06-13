@@ -10521,13 +10521,15 @@ LISTE DES RECETTES SEL
   width: 50px !important; }
 
 .pagefav .button-clear.button-clear {
-  font-size: 1em;
-  padding-right: 10px;
-  padding-left: 10px; }
+  font-size: 1.5em;
+  color: #675959 !important; }
 
 .pagefav h1 {
   color: #675959; }
 
-.ion-ios-heart {
+.pagefav .item {
+  margin-bottom: -5px; }
+
+.ion-ios-trash-outline {
   position: absolute;
-  right: 10px; }
+  right: 25px; }
