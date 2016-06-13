@@ -136,10 +136,8 @@ angular.module('starter.controllers', [])
         userRef.update({
             fav : banane
         });
-  }
-
-
-    });
+    }
+  });
 
    //Add point
   var ref = new Firebase("https://swaltyapp.firebaseio.com/users");
@@ -320,8 +318,32 @@ angular.module('starter.controllers', [])
       single = this.favori;
       console.log(single)
       myService.set(single);
-  } 
+  };
 
+// Attach an asynchronous callback to read the data at our posts reference
+    ref.on("value", function(snapshot) {
+        $scope.delFav = function(){
+            var auth = ref.getAuth();
+            var idUtilisateur = auth.uid;
+            var usersRef = ref.child(idUtilisateur);
+            var path = usersRef.toString();
+            var userRef = new Firebase(path);
+            userRef.on("value", function(snap){
+                var banane = snap.val().fav;
+                var id = single.$id;
+                for (var i = banane.length - 1; i >= 0; i--) {
+                    if (banane[i] === id) {
+                        banane.splice(i,1);
+                    };
+                }
+                updateFav.set(banane);
+            })
+            banane = updateFav.get();
+            userRef.update({
+                fav : banane
+            });
+        }
+    });
 
 })
 

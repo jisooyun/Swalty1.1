@@ -10180,6 +10180,9 @@ LISTE DES RECETTES SEL
   font-weight: normal;
   color: #ff6b6b; }
 
+.item-sel-fav h2 {
+  color: #c7f464; }
+
 .item p {
   color: #666;
   font-size: 16px; }

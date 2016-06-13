@@ -529,7 +529,11 @@ LISTE DES RECETTES SEL
 .item h2{
   font-size: 18px;
   font-weight: normal;
-  color: #ff6b6b;
+  color: $rose;
+}
+
+.item-sel-fav h2 {
+  color: $vert;
 }
 
 .item p{
