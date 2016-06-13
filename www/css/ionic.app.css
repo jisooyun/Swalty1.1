@@ -10473,8 +10473,16 @@ LISTE DES RECETTES SEL
 .nav-sel {
   color: #c7f464; }
 
+<<<<<<< HEAD
 .content-detail p {
   text-align: justify;
   white-space: normal !important;
   line-height: 90% !important;
   padding-top: 0 !important; }
+=======
+.nav-sucre {
+  color: #ff6b6b; }
+
+.nav-sel {
+  color: #c7f464; }
+>>>>>>> eb7abc7de016f1cf6c4c47a61bece14395bfeefe
