@@ -1,0 +1,10 @@
+<ion-view view-title="Ingredients" ng-controller="FavorisController"><!--creation d'une vue-->
+    <ion-content scroll="false"><!-- permet de rendre la  vue non scrollable-->
+        Mes Favoris
+
+        <ion-item ng-repeat="favori in favorits">
+        {{favori.titre}}
+        </ion-item>
+
+    </ion-content>
+</ion-view>

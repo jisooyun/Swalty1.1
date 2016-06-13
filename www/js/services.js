@@ -70,7 +70,35 @@ angular.module('starter.services', ['firebase'])
   }
 })
 
+//Save titre
+.factory("titreJoueur", function(){
+  var titre = " ";
+  function set(data){
+    titre = data;
+  }
+  function get(){
+    return titre;
+  }
+  return{
+    set:set,
+    get:get
+  }
+})
 
+//FAVORIS SINGLE
+.factory("favorisSingle", function(){
+  var fav = 0;
+  function set(data){
+    fav = data;
+  }
+  function get(){
+    return fav;
+  }
+  return{
+    set:set,
+    get:get
+  }
+})
 //Gestion des routes
 .factory('authProvider', function() {
     var user = 0;

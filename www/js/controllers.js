@@ -23,6 +23,7 @@ angular.module('starter.controllers', [])
 //AFFICHER LES RECETTES
 .controller('RecetteController', function($scope, Recettes,$state, myService){
    $scope.recettes = Recettes;
+   console.log(Recettes)
 
    $scope.single = function(){
       single = this.recette;
@@ -31,7 +32,7 @@ angular.module('starter.controllers', [])
 })
 
 //AFFICHER LES RECETTES SINGLE
-.controller('SingleController', function($scope, Recettes, $ionicViewService,  myService, updateFav, Scores, ScoresTotal){
+.controller('SingleController', function($scope, Recettes, $ionicViewService,  myService, updateFav, Scores, ScoresTotal, titreJoueur){
 
   $scope.single = myService.get();
   $scope.ingredients = single.ingredient;
@@ -160,6 +161,19 @@ angular.module('starter.controllers', [])
           snaperlipopetteNew = snaperlipopette + 1
           ScoresTotal.set(snaperlipopetteNew);
         })
+        
+        ref3.on("value", function(sn){
+          scores = Scores.get();
+          var snaperlipopetteTitre = sn.val()
+          sn.forEach(function(childSnapshot) {
+            if (childSnapshot.val().score == scores) {
+              titre = childSnapshot.val().nom
+              titreJoueur.set(titre)
+              usersRef.update({titre:titre})
+            };
+          })
+          
+        })
 
         scores = Scores.get();
         userRef.update({
@@ -167,6 +181,7 @@ angular.module('starter.controllers', [])
         
         });
         NewSna = ScoresTotal.get()
+        console.log(NewSna)
         ref2.update({sucre:NewSna});
       }
     });
@@ -182,26 +197,35 @@ angular.module('starter.controllers', [])
             var scores = score + 1;
             Scores.set(scores);
         })
-        ref2.on("value", function(sna){
-          var snaperlipopetteSel = sna.val().sel
-          snaperlipopetteNewnew = snaperlipopetteSel + 1
-          ScoresTotal.set(snaperlipopetteNewnew);
-        })
         
-        scores = Scores.get();
-
         ref3.on("value", function(sn){
+          scores = Scores.get();
           var snaperlipopetteTitre = sn.val()
           console.log(snaperlipopetteTitre);
+          sn.forEach(function(childSnapshot) {
+            if (childSnapshot.val().score == scores) {
+              titre = childSnapshot.val().nom
+              titreJoueur.set(titre)
+              usersRef.update({titre:titre})
+            };
+          })
+          
         })
-
+        scores = Scores.get();
         userRef.update({
             sel : scores
-        
         });
-        NewSnaSel = ScoresTotal.get()
+        ref2.on("value", function(pomme){
+          var snaperlipopetteSel = pomme.val().sel
+          var snaperlipopetteNewnew = snaperlipopetteSel +1
+          console.log(snaperlipopetteNewnew)
+          ScoresTotal.set(snaperlipopetteNewnew);
+        })
+        var NewSnaSel = ScoresTotal.get()
+        console.log(NewSnaSel)
         ref2.update({sel:NewSnaSel});
       }
+
     });
 
 })
@@ -229,6 +253,38 @@ angular.module('starter.controllers', [])
     $scope.titres = Titres;
 })
 
+// FAVORIS
+.controller('FavorisController', function($scope, Titres, favorisSingle){
+    var ref = new Firebase("https://swaltyapp.firebaseio.com/users");
+
+        ref.on("value", function(snap){
+          var auth = ref.getAuth();
+          var idUtilisateur = auth.uid;
+          var usersRef = ref.child(idUtilisateur);
+          var path = usersRef.toString();
+          var userRef = new Firebase(path);
+          userRef.on("value", function(snapshot){
+            var tadam = snapshot.val().fav;
+            favorisSingle.set(tadam);
+            
+            var ref2 = new Firebase("https://swaltyapp.firebaseio.com/recettes");
+            ref2.on("value", function(sn){
+              var fav = sn.val();
+              tadam = favorisSingle.get()
+              var favorisFinal = [0]
+              
+                for (var i = tadam.length - 1; i >= 1; i--) {
+                  if (sn.hasChild(tadam[i])) {
+                    if (tadam.length - 1 == i) {favorisFinal.splice(0,1)};
+                    favorisFinal.push(fav[tadam[i]]);
+                  };
+                }; 
+              $scope.favorits = favorisFinal
+            })
+          })
+        });
+    $scope.titres = Titres;
+})
 
 //authInscription
 .controller('AuthController', function($scope, authProvider, $state) {
@@ -323,7 +379,7 @@ angular.module('starter.controllers', [])
           ref.once('value', function(snapshot) {
           var test = getName(authData)
           var test2 = authData.provider
-
+          console.log(snapshot)
           if (snapshot.hasChild(test)) {
             console.log('test')
             var isNewUser = true;
@@ -387,7 +443,6 @@ angular.module('starter.controllers', [])
         ref.onAuth(function(authData) {
           ref.once('value', function(snapshot) {
           var test = getName(authData)
-
           if (snapshot.hasChild(test)) {
             console.log("nice")
             var isNewUser = true;
@@ -409,5 +464,7 @@ angular.module('starter.controllers', [])
             }
         });
     }
+
+
 
 ]);
