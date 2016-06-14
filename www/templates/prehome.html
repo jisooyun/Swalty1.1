@@ -12,11 +12,6 @@
             <button ui-sref="register" class="btn_inscription"> Inscription </button>
             <button class="btn_connexionfb" ng-click="auth.$authWithOAuthPopup('facebook');showPopup()">Connexion Facebook</button>
 
-
-            <div ng-show="authData">
-                <button ng-click="auth.$unauth()">Déconnexion</button>
-            </div>
-
         </section>
 
     </ion-content>

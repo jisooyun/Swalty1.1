@@ -22,6 +22,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "www/lib/ionic/scss/ionic";
 
 $vert: #c7f464;
+$vertText: #BDF527;
 $rose: #ff6b6b;
 $marron: #675959;
 $blanc: #fff;
@@ -65,8 +66,7 @@ $ombreTxt: 0px 4px 7px rgba(0, 0, 0, 0.5);
 //CORPS
 
 h1, h2, h3, h4, p, a, button {
-  font-family: 'champagne__limousinesregular';
-}
+  font-family: 'champagne__limousinesregular';}
 
 a {
   text-decoration: none;
@@ -513,7 +513,8 @@ LISTE DES RECETTES SEL
  ---------------------------------------------------------*/
 
 .item-sel h2 {
-  color: $vert !important;
+  color: $vertText !important;
+  font-family: 'champagne__limousinesbold';
 }
 
 .page h1 {
@@ -529,6 +530,7 @@ LISTE DES RECETTES SEL
   font-size: 18px;
   font-weight: normal;
   color: $rose;
+  font-family: 'champagne__limousinesbold';
 }
 
 .item-sel-fav h2 {
@@ -599,9 +601,13 @@ LISTE DES RECETTES SEL
 
 .content{
   text-align: center;
-  max-height: 330px !important;
+  max-height: 340px !important;
   overflow: auto;
   margin-bottom: 30px;
+
+  .row {
+    padding-bottom: 15px;
+  }
 }
 
 .content-detail{
@@ -649,7 +655,7 @@ LISTE DES RECETTES SEL
 /* PAGE ETAPES */
 
 .content-etape{
-  max-height: 400px !important;
+  max-height: 360px !important;
   text-align: center;
 }
 
@@ -971,7 +977,7 @@ LISTE DES RECETTES SEL
     color: $marron !important;
   }
   h1{
-    color: $marron;
+    color: $blanc;
   }
   .item{
     margin-bottom: -5px;

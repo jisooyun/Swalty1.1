@@ -10167,7 +10167,8 @@ LISTE DES RECETTES SUCRE
 LISTE DES RECETTES SEL
  ---------------------------------------------------------*/
 .item-sel h2 {
-  color: #c7f464 !important; }
+  color: #BDF527 !important;
+  font-family: 'champagne__limousinesbold'; }
 
 .page h1 {
   text-shadow: 0px 4px 7px rgba(0, 0, 0, 0.5); }
@@ -10178,7 +10179,8 @@ LISTE DES RECETTES SEL
 .item h2 {
   font-size: 18px;
   font-weight: normal;
-  color: #ff6b6b; }
+  color: #ff6b6b;
+  font-family: 'champagne__limousinesbold'; }
 
 .item-sel-fav h2 {
   color: #c7f464; }
@@ -10235,9 +10237,11 @@ LISTE DES RECETTES SEL
 
 .content {
   text-align: center;
-  max-height: 330px !important;
+  max-height: 340px !important;
   overflow: auto;
   margin-bottom: 30px; }
+  .content .row {
+    padding-bottom: 15px; }
 
 .content-detail {
   text-align: center;
@@ -10277,7 +10281,7 @@ LISTE DES RECETTES SEL
 
 /* PAGE ETAPES */
 .content-etape {
-  max-height: 400px !important;
+  max-height: 360px !important;
   text-align: center; }
 
 .content-etape p {
@@ -10525,7 +10529,7 @@ LISTE DES RECETTES SEL
   color: #675959 !important; }
 
 .pagefav h1 {
-  color: #675959; }
+  color: #fff; }
 
 .pagefav .item {
   margin-bottom: -5px; }

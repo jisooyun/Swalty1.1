@@ -2,7 +2,7 @@
     <ion-content scroll="true"><!-- permet de rendre la  vue non scrollable-->
         <!--Mes Favoris-->
 
-        <section class="pagefav">
+        <section class="page pagefav">
 
             <div class="bg-list bg-fav">
                 <a class="boutonRetour button icon-left ion-chevron-left button-clear button-ligth ion-ios-arrow-thin-left"
@@ -15,8 +15,8 @@
             <!--LISTE DES RECETTES -->
 
 
-            <ion-list  ng-if="favori">
-                <ion-item ng-repeat="favori in favorits" ng-if="favori.typeRecette != 'sel'">
+            <ion-list>
+                <ion-item ng-repeat="favori in favorits" ng-if="favori && favori.typeRecette != 'sel'">
 
                     <a class="item item-thumbnail-left" ui-sref="sucre-detail" ng-click="single(single)">
                         <img src="img/gaufre-sucre.jpg">
@@ -32,8 +32,8 @@
 
                 </ion-item>
             </ion-list>
-            <ion-list  ng-if="favori">
-                <ion-item class="item-sel-fav" ng-repeat="favori in favorits" ng-if="favori.typeRecette == 'sel'">
+            <ion-list>
+                <ion-item class="item-sel-fav" ng-repeat="favori in favorits" ng-if="favori && favori.typeRecette == 'sel'">
 
 
                         <a class="item item-thumbnail-left item-sel" ui-sref="sel-detail" ng-click="single(single)">
