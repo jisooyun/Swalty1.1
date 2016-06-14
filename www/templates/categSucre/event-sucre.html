@@ -1,31 +1,35 @@
-<ion-view view-title="Event | Sucré">
+<ion-view view-title="Event | Sucré"><!--creation d'une vue-->
+    <ion-content scroll="true"><!-- permet de rendre la  vue non scrollable-->
+        <!-- BACKGROUND GAUFRE -->
 
-    <ion-content>
         <section class="page">
 
             <div class="bg-list bg-event-sucre">
-                <a class="boutonRetour button icon-left ion-chevron-left button-clear button-ligth ion-ios-arrow-thin-left"
-                ui-sref="sucre">
+                <a class="boutonRetour button icon-left ion-chevron-left button-clear button-ligth ion-ios-arrow-thin-left" ui-sref="sucre">
                 </a>
-                <h1 class="text-center"> EVENEMENT </h1>
+                <h1 class="text-center"> EVENT </h1>
             </div>
 
-        <ion-list scroll="true" ng-controller="RecetteController">
-            <ion-item ng-repeat="recette in recettes" ng-if="recette.categRecette == 'event' && recette.typeRecette == 'sucre'">
-                <a class="item item-thumbnail-left" ui-sref="sucre-detail">
-                    <img src="img/event-sucre.jpg">
-                    <h2>{{recette.titre}}</h2>
-                    <p>Durée : {{recette.temps}} minutes</p>
-                    <p> Pour  : {{recette.nbPersonne}} personnes</p>
-                    <p>Difficulté : {{recette.difficulte}}</p>
-                </a>
-            </ion-item>
-        </ion-list>
+            <!--LISTE DES RECETTES -->
+            <div class="bar bar-header item-input-inset">
+                <input type="text" placeholder=" Rechercher une recette" ng-model="search.titre"
+                       style="width:100%; padding-left:11px;" />
+            </div>
 
-       </section>
+            <ion-list ng-controller="RecetteController">
+                <ion-item ng-repeat="recette in recettes" ng-if="recette.categRecette == 'event' && recette.typeRecette == 'sucre'">
+                    <a class="item item-thumbnail-left" ui-sref="sucre-detail" ng-click="single(single)">
+                        <img src="img/gaufre-sucre.jpg">
+                        <h2>{{recette.titre}}</h2>
+                        <p>Durée : {{recette.temps}} minutes</p>
+                        <p> Pour  : {{recette.nbPersonne}} personnes</p>
+                        <p>Difficulté : {{recette.difficulte}}</p>
+                    </a>
+                </ion-item>
+            </ion-list>
+
+        </section>
         <div ng-include src="'templates/nav.html'"></div>
 
     </ion-content>
-
 </ion-view>
-

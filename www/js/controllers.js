@@ -276,6 +276,8 @@ angular.module('starter.controllers', [])
         console.log("id: " + prevChildKey);
     });
 
+    $scope.listlength = 20;
+
    
 })
 
