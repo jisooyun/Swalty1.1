@@ -17,7 +17,7 @@
             </div>
 
             <ion-list ng-controller="RecetteController">
-                <ion-item ng-repeat="recette in recettes" ng-if="recette.categRecette == 'event' && recette.typeRecette == 'sucre'">
+                <ion-item ng-repeat="recette in recettes | filter:search | limitTo:listlength" ng-if="recette.categRecette == 'event' && recette.typeRecette == 'sucre'">
                     <a class="item item-thumbnail-left" ui-sref="sucre-detail" ng-click="single(single)">
                         <img src="img/gaufre-sucre.jpg">
                         <h2>{{recette.titre}}</h2>

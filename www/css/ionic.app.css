@@ -10494,6 +10494,9 @@ LISTE DES RECETTES SEL
 .nav-sel {
   color: #c7f464; }
 
+.tabs-striped .tabs {
+  border-top: 1px solid #ddd !important; }
+
 .popup {
   border-radius: 30px !important;
   height: auto !important; }
