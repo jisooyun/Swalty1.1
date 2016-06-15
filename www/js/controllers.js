@@ -29,6 +29,16 @@ angular.module('starter.controllers', [])
       myService.set(single);
       console.log(single)
   } 
+
+  var ref = new Firebase("https://swaltyapp.firebaseio.com/scores");
+// Attach an asynchronous callback to read the data at our posts reference
+  ref.on("value", function(snapshot) {
+    scores = snapshot.val();
+    $scope.sucreStyle = {width: ((scores.sucre)*100) / ((scores.sel)+(scores.sucre))+"%" };
+    $scope.selSucre = {width: ((scores.sel)*100) / ((scores.sel)+(scores.sucre))+"%" };
+  }, function (errorObject) {
+  });
+
 })
 
 //AFFICHER LES RECETTES SINGLE
@@ -550,6 +560,17 @@ angular.module('starter.controllers', [])
         });
     }
 
+// .controller('progressController', function($scope) {
+// // Get a database reference to our posts
+//   var ref = new Firebase("https://swaltyapp.firebaseio.com/scores");
+// // Attach an asynchronous callback to read the data at our posts reference
+//   ref.on("value", function(snapshot) {
+//     scores = snapshot.val();
+//     $scope.sucreStyle = {width: ((scores.sucre)*100) / ((scores.sel)+(scores.sucre))+"%" };
+//     $scope.selSucre = {width: ((scores.sel)*100) / ((scores.sel)+(scores.sucre))+"%" };
+//   }, function (errorObject) {
+//   });
 
+// })
 
 ]);

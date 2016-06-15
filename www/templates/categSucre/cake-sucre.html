@@ -11,13 +11,17 @@
                 <h1 class="text-center"> CAKE </h1>
             </div>
 
-
+            <div ng-controller="RecetteController">
+                <div class="progressBar barSucree" ng-style="sucreStyle"></div>
+                <div class="progressBar barSalee"  ng-style="selSucre"></div>
+            </div>
             <!--LISTE DES RECETTES -->
 
             <div class="bar bar-header item-input-inset">
                 <input type="text" placeholder=" Rechercher une recette" ng-model="search.titre"
                        style="width:100%; padding-left:11px;" />
             </div>
+              
 
             <ion-list ng-controller="RecetteController">
                 <ion-item ng-repeat="recette in recettes | filter:search | limitTo:listlength" ng-if="recette.categRecette == 'cake' && recette.typeRecette == 'sucre'">
