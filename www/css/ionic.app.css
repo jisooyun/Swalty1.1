@@ -10281,7 +10281,7 @@ LISTE DES RECETTES SEL
 
 /* PAGE ETAPES */
 .content-etape {
-  max-height: 360px !important;
+  max-height: 395px !important;
   text-align: center; }
 
 .content-etape p {
@@ -10449,8 +10449,8 @@ LISTE DES RECETTES SEL
   text-transform: uppercase;
   font-size: 1.2em !important;
   border-radius: initial !important;
-  background-color: #ff6b6b !important;
-  color: #fff;
+  background-color: #cfcfcf !important;
+  color: #675959;
   height: 60px;
   width: 100%;
   position: absolute;
@@ -10461,13 +10461,21 @@ LISTE DES RECETTES SEL
   font-size: 1.2em;
   text-transform: uppercase;
   height: 60px;
-  position: absolute;
   width: 100%;
   border: none;
   background-color: #c7f464 !important;
   color: #675959;
-  bottom: 60px;
   left: 0; }
+
+.btn-sucre {
+  border: none;
+  text-transform: uppercase;
+  font-size: 1.2em !important;
+  border-radius: initial !important;
+  background-color: #ff6b6b !important;
+  color: #fff;
+  height: 60px;
+  width: 100%; }
 
 .form-profil {
   padding-top: 30px;
@@ -10540,3 +10548,14 @@ LISTE DES RECETTES SEL
 .ion-ios-trash-outline {
   position: absolute;
   right: 25px; }
+
+.progressBar {
+  height: 10px;
+  display: block;
+  float: right; }
+
+.barSucree {
+  background-color: #c7f464; }
+
+.barSalee {
+  background-color: #ff6b6b; }
