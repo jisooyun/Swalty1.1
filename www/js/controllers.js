@@ -526,38 +526,19 @@ angular.module('starter.controllers', [])
         // any time auth status updates, add the user data to scope
         $scope.auth.$onAuth(function(authData) {
             $scope.authData = authData;
-        });
-        // we would probably save a profile when we register new users on our site
-        // we could also read the profile to see if it's null
-        // here we will just simulate this with an isNewUser boolean
-        var isNewUser = false;
+            console.log(authData)
+            var ref = new Firebase("https://swaltyapp.firebaseio.com/users");
+            var idUtilisateur = authData.uid;
+            var usersRef = ref.child(idUtilisateur);
+            var path = usersRef.toString();
+            var userRef = new Firebase(path);
+            userRef.on("value", function(snap) {
+                var utilisateur = snap.val()
+                $scope.utili = utilisateur;
+            })
 
-        var ref = new Firebase("https://swaltyapp.firebaseio.com");
-
-
-        ref.onAuth(function(authData) {
-          ref.once('value', function(snapshot) {
-          var test = getName(authData)
-          if (snapshot.hasChild(test)) {
-            console.log("nice")
-            var isNewUser = true;
-          }else{
-            console.log(getName(authData))
-          }
         });
-            if (authData && isNewUser == true) {
-                var favoris = [0];
-                // save the user's profile into the database so we can list users,
-                // use them in Security and Firebase Rules, and show profiles
-                ref.child("users").child(authData.uid).set({
-                    provider: authData.provider,
-                    name: getName(authData),
-                    fav: favoris,
-                    sucre: 0,
-                    sel: 0
-                });
-            }
-        });
+
     }
 
 // .controller('progressController', function($scope) {
